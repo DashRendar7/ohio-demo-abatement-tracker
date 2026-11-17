@@ -52,10 +52,8 @@ LOCALS = {
     '1015': ['CARROLL', 'STARK', 'WAYNE'],
     '1216': ['ASHLAND', 'CRAWFORD', 'KNOX', 'MORROW', 'RICHLAND'],
     '1410': ['CHAMPAIGN', 'CLARK', 'DARKE', 'GREENE', 'LOGAN', 'MIAMI', 'MONTGOMERY', 'PREBLE'],
-    'BELMONT': ['BELMONT'],  # Belmont County is covered by a West Virginia local
 }
 LOCAL_LABEL = {k: ('Local ' + k) for k in LOCALS}
-LOCAL_LABEL['BELMONT'] = 'Belmont County (WV local)'
 
 # The EPA sheet has a group row above the header row; some headers repeat under different groups.
 COLS = [  # (key, group contains, header contains)
@@ -347,6 +345,10 @@ def build(today=None, epa_raw=None, min_rows=20000):
               'locals': {k: _local_counts([s for s in sites if k in s['locals']]) for k in LOCALS},
               'local_labels': LOCAL_LABEL, 'local_counties': LOCALS}
     json.dump({'sites': [j(s) for s in sites]}, open(os.path.join(DATA, 'sites.json'), 'w'), indent=0, sort_keys=True)
+    wanted = {'Local_%s.xlsx' % k for k in LOCALS} | {'All_Ohio.xlsx', 'Needs_review.xlsx'}
+    for f in os.listdir(os.path.join(DATA, 'reports')):  # remove reports for Locals no longer listed
+        if f.endswith('.xlsx') and f not in wanted:
+            os.remove(os.path.join(DATA, 'reports', f))
     for k in LOCALS:
         write_xlsx(os.path.join(DATA, 'reports', 'Local_%s.xlsx' % k), LOCAL_LABEL[k], [s for s in sites if k in s['locals']], status, LOCALS[k])
     write_xlsx(os.path.join(DATA, 'reports', 'All_Ohio.xlsx'), 'All Ohio', sites, status, None)
