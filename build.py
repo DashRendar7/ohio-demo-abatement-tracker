@@ -12,7 +12,7 @@ Every run (GitHub Actions, .github/workflows/tracker.yml):
 4. Writes data/sites.json, data/status.json and one Excel report per Local in data/reports/.
 verify.py then re-reads the EPA file independently and checks every number before anything is saved.
 """
-import datetime, hashlib, io, json, os, re, sys, time, urllib.request
+import csv, datetime, hashlib, io, json, os, re, sys, time, urllib.request
 from collections import defaultdict
 from zoneinfo import ZoneInfo
 
@@ -202,7 +202,6 @@ def geocode(addresses, cache, today):
         if c is None or (c['match'] != 'Match' and (today - datetime.date.fromisoformat(c['when'])).days >= RETRY_UNMATCHED_DAYS):
             todo.append(a)
     log('geocoding', len(todo), 'addresses')
-    import csv
     for s in range(0, len(todo), 1000):
         chunk = todo[s:s + 1000]
         body_csv = '\n'.join('%d,"%s",,,' % (j, a.replace('"', '')) for j, a in enumerate(chunk))
@@ -222,6 +221,41 @@ def geocode(addresses, cache, today):
         missing = [a for a in chunk if a not in got]
         if missing:
             raise RuntimeError('Census geocoder returned no answer for %d addresses; stopping without changes' % len(missing))
+    # Second pass for unmatched addresses: street and city in separate fields, trying the last 1-3 words
+    # before "OH" as the city. Kept only if every split that matches lands in the same Ohio county.
+    retry = [a for a in addresses if cache.get(a, {}).get('match') != 'Match' and
+             ('alt_when' not in cache[a] or (today - datetime.date.fromisoformat(cache[a]['alt_when'])).days >= RETRY_UNMATCHED_DAYS)]
+    log('second pass for', len(retry), 'addresses')
+    rows = []
+    for k, a in enumerate(retry):
+        m = re.match(r'^(.*\S)\s+OH(?:IO)?\.?,?\s*(\d{5})?(?:-\d{4})?\s*$', a, re.I)
+        if not m:
+            continue
+        words = m.group(1).replace(',', ' ').split()
+        for n in (1, 2, 3):
+            if len(words) > n + 1:
+                rows.append(('%d_%d' % (k, n), ' '.join(words[:-n]), ' '.join(words[-n:]), m.group(2) or ''))
+    found = defaultdict(set)
+    for s in range(0, len(rows), 1000):
+        chunk = rows[s:s + 1000]
+        body_csv = '\n'.join('%s,"%s","%s",OH,%s' % (i, st.replace('"', ''), ci.replace('"', ''), z) for i, st, ci, z in chunk)
+        bd = '----trk' + hashlib.md5(body_csv.encode()).hexdigest()[:12]
+        body = ('--%s\r\nContent-Disposition: form-data; name="benchmark"\r\n\r\nPublic_AR_Current\r\n'
+                '--%s\r\nContent-Disposition: form-data; name="vintage"\r\n\r\nCurrent_Current\r\n'
+                '--%s\r\nContent-Disposition: form-data; name="addressFile"; filename="a.csv"\r\nContent-Type: text/csv\r\n\r\n%s\r\n--%s--\r\n'
+                % (bd, bd, bd, body_csv, bd)).encode()
+        raw, _ = get(CENSUS, data=body, headers={'Content-Type': 'multipart/form-data; boundary=' + bd})
+        for f in csv.reader(io.StringIO(raw.decode('utf-8', 'replace'))):
+            if len(f) > 9 and f[2] == 'Match' and f[8] and f[9] and re.match(r'^\d+_\d$', f[0]):
+                found[int(f[0].split('_')[0])].add((f[8] + f[9], f[4]))
+    for k, a in enumerate(retry):
+        counties = {c for c, _ in found.get(k, ())}
+        alt = None
+        if len(counties) == 1 and next(iter(counties)).startswith('39'):
+            c = next(iter(counties))
+            alt = {'county': c, 'matched': sorted(m for cc, m in found[k] if cc == c)[0]}
+        cache[a]['alt'] = alt
+        cache[a]['alt_when'] = today.isoformat()
 
 
 def place(addr, cache, zc, names):
@@ -235,6 +269,10 @@ def place(addr, cache, zc, names):
             return cty, 'Census address match', [cty], True
         zn = ', '.join(sorted(names[x] for x in zcs))
         return cty, 'Census address match (%s); the ZIP in the notice, %s, is in %s' % (c['matched'], z, zn.title()), [cty], True
+    alt = c.get('alt')
+    if alt and alt['county'].startswith('39') and (not zcs or alt['county'] in zcs):
+        cty = names[alt['county']]
+        return cty, 'Census address match with street and city entered separately (%s)' % alt['matched'], [cty], True
     if zcs and len(zcs) == 1:
         cty = names[next(iter(zcs))]
         return cty, 'ZIP %s lies entirely in this county' % z, [cty], True
@@ -304,7 +342,8 @@ def build(today=None, epa_raw=None, min_rows=20000):
               'sites': len(sites), 'notifications': len({s['id'] for s in sites}),
               'confirmed': sum(1 for s in sites if s['confirmed']), 'not_confirmed': sum(1 for s in sites if not s['confirmed']),
               'review': sum(1 for s in sites if s['review']), 'no_details': no_details,
-              'basis': dict(sorted(_count(s['county_basis'].split(' (')[0].split(';')[0].split(':')[0] for s in sites).items())),
+              'basis': dict(sorted(_count(('Census address match' if s['county_basis'].startswith('Census') else 'ZIP in one county' if s['county_basis'].startswith('ZIP')
+                                            else 'County not confirmed') for s in sites).items())),
               'locals': {k: _local_counts([s for s in sites if k in s['locals']]) for k in LOCALS},
               'local_labels': LOCAL_LABEL, 'local_counties': LOCALS}
     json.dump({'sites': [j(s) for s in sites]}, open(os.path.join(DATA, 'sites.json'), 'w'), indent=0, sort_keys=True)
