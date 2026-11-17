@@ -92,10 +92,14 @@ for s in sites:
     c = cache.get(a, {})
     if s['confirmed']:
         if s['county_basis'].startswith('Census'):
-            if not (c.get('match') == 'Match' and names.get(c.get('county')) == s['county']):
+            alt = c.get('alt') or {}
+            primary = c.get('match') == 'Match' and names.get(c.get('county')) == s['county']
+            second = (c.get('match') != 'Match' and names.get(alt.get('county')) == s['county'] and (z not in zc or alt.get('county') in zc[z]))
+            if not (primary or second):
                 bad('census placement not backed by the cache: %s -> %s' % (a, s['county']))
         elif s['county_basis'].startswith('ZIP'):
-            if not (z in zc and len(zc[z]) == 1 and names[next(iter(zc[z]))] == s['county']) or c.get('match') == 'Match':
+            alt_ok = str((c.get('alt') or {}).get('county', '')).startswith('39') and (z not in zc or c['alt']['county'] in zc[z])
+            if not (z in zc and len(zc[z]) == 1 and names[next(iter(zc[z]))] == s['county']) or c.get('match') == 'Match' or alt_ok:
                 bad('ZIP placement not valid: %s -> %s' % (a, s['county']))
         else:
             bad('unknown basis %s' % s['county_basis'])
@@ -106,6 +110,9 @@ for s in sites:
             bad('unconfirmed site has a county: %s' % a)
         if c.get('match') == 'Match' and str(c.get('county', '')).startswith('39'):
             bad('site left unconfirmed although the Census matched it: %s' % a)
+        alt = c.get('alt') or {}
+        if str(alt.get('county', '')).startswith('39') and (z not in zc or alt['county'] in zc[z]):
+            bad('site left unconfirmed although the second Census pass matched it: %s' % a)
         if z in zc and sorted(names[x] for x in zc[z]) != sorted(s['candidates']):
             bad('candidates differ from the ZIP counties: %s' % a)
     want = sorted((k for k, cs in LOCALS.items() if set(s['candidates']) & set(cs)), key=lambda k: (not k.isdigit(), int(k) if k.isdigit() else 0))
