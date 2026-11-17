@@ -300,6 +300,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"101 E. Spring Street St. Mary's OH 44885": {
+"county": "39011",
+"match": "Match",
+"matched": "101 E SPRING ST, SAINT MARYS, OH, 45885",
+"type": "Non_Exact",
+"when": "2026-11-16"
+},
 "101 Fairview Way Mingo Junction OH 43938": {
 "county": "39081",
 "match": "Match",
@@ -1478,6 +1485,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"1275 Olentangy River Road Columbus OH 43212": {
+"county": "39049",
+"match": "Match",
+"matched": "1275 OLENTANGY RIVER RD, COLUMBUS, OH, 43212",
+"type": "Exact",
+"when": "2026-11-16"
+},
 "12755 Berkshire Road Cleveland Heights OH 44106": {
 "alt": null,
 "alt_when": "2026-11-16",
@@ -2046,6 +2060,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"1451 Cleveland Massillon Rd Akron OH 44321": {
+"county": "39153",
+"match": "Match",
+"matched": "1451 S CLEVELAND MASSILLON RD, AKRON, OH, 44321",
+"type": "Non_Exact",
+"when": "2026-11-16"
+},
 "14512 Ohio Ave Cleveland OH 44128": {
 "county": "39035",
 "match": "Match",
@@ -2064,6 +2085,13 @@
 "county": "39009",
 "match": "Match",
 "matched": "146 W MAIN ST, GLOUSTER, OH, 45732",
+"type": "Non_Exact",
+"when": "2026-11-16"
+},
+"1463 Cleveland Massillon Rd Akron OH 44321": {
+"county": "39153",
+"match": "Match",
+"matched": "1463 S CLEVELAND MASSILLON RD, AKRON, OH, 44321",
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
@@ -4105,6 +4133,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"2338 West Broad Street Columbus OH 43204": {
+"county": "39049",
+"match": "Match",
+"matched": "2338 W BROAD ST, COLUMBUS, OH, 43204",
+"type": "Exact",
+"when": "2026-11-16"
+},
 "235 Forest Warren OH 44483": {
 "alt": null,
 "alt_when": "2026-11-16",
@@ -4901,6 +4936,15 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"2900 Lorain Road North olmsted OH 44070": {
+"alt": null,
+"alt_when": "2026-11-16",
+"county": "",
+"match": "No_Match",
+"matched": "",
+"type": "",
+"when": "2026-11-16"
+},
 "29000 Center Ridge Rd Westlake OH 44145": {
 "county": "39035",
 "match": "Match",
@@ -5587,6 +5631,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"3302 Baum Street SE Canton OH 44707": {
+"county": "39151",
+"match": "Match",
+"matched": "3302 BAUM ST SE, CANTON, OH, 44707",
+"type": "Exact",
+"when": "2026-11-16"
+},
 "331 Sixth Ave. Galion OH 44833": {
 "county": "39033",
 "match": "Match",
@@ -5893,6 +5944,13 @@
 "county": "39153",
 "match": "Match",
 "matched": "356 EASTWOOD AVE, TALLMADGE, OH, 44278",
+"type": "Exact",
+"when": "2026-11-16"
+},
+"3564 Copley Rd Akron OH 44321": {
+"county": "39153",
+"match": "Match",
+"matched": "3564 COPLEY RD, AKRON, OH, 44321",
 "type": "Exact",
 "when": "2026-11-16"
 },
@@ -6237,6 +6295,15 @@
 "match": "Match",
 "matched": "4019 E FILAGER RD, BATAVIA, OH, 45103",
 "type": "Exact",
+"when": "2026-11-16"
+},
+"4025 Alexander lane williamsburg OH 45176": {
+"alt": null,
+"alt_when": "2026-11-16",
+"county": "",
+"match": "No_Match",
+"matched": "",
+"type": "",
 "when": "2026-11-16"
 },
 "4041 Northfield Road Highland Hills OH 44122": {
@@ -6610,6 +6677,13 @@
 "when": "2026-11-16"
 },
 "4415 west 130th Cleveland OH 44135": {
+"county": "39035",
+"match": "Match",
+"matched": "4415 W 130TH ST, CLEVELAND, OH, 44135",
+"type": "Non_Exact",
+"when": "2026-11-16"
+},
+"4415 west 130th cleveland OH 44135": {
 "county": "39035",
 "match": "Match",
 "matched": "4415 W 130TH ST, CLEVELAND, OH, 44135",
@@ -7478,6 +7552,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"545 PITTSBURGH AVENUE WOOSTER OH 44691": {
+"county": "39169",
+"match": "Match",
+"matched": "545 PITTSBURG AVE, WOOSTER, OH, 44691",
+"type": "Non_Exact",
+"when": "2026-11-16"
+},
 "547 Ridge Ave Youngstown OH 44502": {
 "county": "39099",
 "match": "Match",
@@ -7550,6 +7631,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"557 clay street jefferson OH 44047": {
+"county": "39007",
+"match": "Match",
+"matched": "557 CLAY ST, JEFFERSON, OH, 44047",
+"type": "Exact",
+"when": "2026-11-16"
+},
 "558 Stibbs Street Wooster OH 44691": {
 "county": "39169",
 "match": "Match",
@@ -7590,6 +7678,13 @@
 "match": "Match",
 "matched": "563 N WOOSTER RD, BARBERTON, OH, 44203",
 "type": "Non_Exact",
+"when": "2026-11-16"
+},
+"567 clay street jefferson OH 44047": {
+"county": "39007",
+"match": "Match",
+"matched": "567 CLAY ST, JEFFERSON, OH, 44047",
+"type": "Exact",
 "when": "2026-11-16"
 },
 "569 Edgewood Akron OH 44307": {
@@ -8018,6 +8113,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"644 Chestnut St Greenville OH 45331": {
+"county": "39037",
+"match": "Match",
+"matched": "644 CHESTNUT ST, GREENVILLE, OH, 45331",
+"type": "Exact",
+"when": "2026-11-16"
+},
 "6455 Taylor Road Blacklick OH 43004": {
 "county": "39049",
 "match": "Match",
@@ -8060,6 +8162,15 @@
 "match": "Match",
 "matched": "6501 FLEET AVE, CLEVELAND, OH, 44105",
 "type": "Exact",
+"when": "2026-11-16"
+},
+"6506 OH 229 Centerburg OH 45629": {
+"alt": null,
+"alt_when": "2026-11-16",
+"county": "",
+"match": "No_Match",
+"matched": "",
+"type": "",
 "when": "2026-11-16"
 },
 "651 E University St Wooster OH 44691": {
@@ -8395,6 +8506,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"720 Columbiana-Waterford Road Columbiana OH 44408": {
+"county": "39029",
+"match": "Match",
+"matched": "720 COLUMBIANA-WATERFORD RD, COLUMBIANA, OH, 44408",
+"type": "Exact",
+"when": "2026-11-16"
+},
 "7203 Park Ave. Cleveland OH 44105": {
 "county": "39035",
 "match": "Match",
@@ -8602,6 +8720,13 @@
 "match": "Match",
 "matched": "7800 WALTON PKWY, NEW ALBANY, OH, 43054",
 "type": "Exact",
+"when": "2026-11-16"
+},
+"784 pauline St 784 Pauline St springfield OH 45503": {
+"county": "39023",
+"match": "Match",
+"matched": "784 PAULINE ST, SPRINGFIELD, OH, 45503",
+"type": "Non_Exact",
 "when": "2026-11-16"
 },
 "7931 Main St Highland OH 45132": {
@@ -9035,6 +9160,13 @@
 "match": "Match",
 "matched": "8931 CEDAR AVE, CLEVELAND, OH, 44106",
 "type": "Exact",
+"when": "2026-11-16"
+},
+"9 Hill Road Pickerington OH 43130": {
+"county": "39045",
+"match": "Match",
+"matched": "9 HILL RD S, PICKERINGTON, OH, 43147",
+"type": "Non_Exact",
 "when": "2026-11-16"
 },
 "902 South Irvine Avenue Masury OH 44438": {

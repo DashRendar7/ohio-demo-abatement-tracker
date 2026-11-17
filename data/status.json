@@ -1,17 +1,17 @@
 {
  "basis": {
-  "Census address match": 1295,
-  "County not confirmed": 15,
+  "Census address match": 1312,
+  "County not confirmed": 16,
   "Likely county": 77,
   "ODOT county code": 14,
-  "ZIP in one county": 117
+  "ZIP in one county": 118
  },
- "built": "2026-11-17T02:28:13+00:00",
- "confirmed": 1426,
- "epa_as_of": "11/13/2026 9:00:05 PM",
- "epa_posted": "Tue, 17 Nov 2026 00:38:21 GMT",
- "epa_rows": 73225,
- "epa_sha256": "169e49bc7dc721c3254adcee83bd1a6bb3a394e10fda484e6201a87ecd0b9788",
+ "built": "2026-11-17T03:22:12+00:00",
+ "confirmed": 1444,
+ "epa_as_of": "11/16/2026 9:00:07 PM",
+ "epa_posted": "Tue, 17 Nov 2026 03:08:15 GMT",
+ "epa_rows": 73248,
+ "epa_sha256": "0b0686af9a96976ea95199488e1fffb341c7115b5dffab5e8b349d86aa3e9c47",
  "likely": 77,
  "local_counties": {
   "1015": [
@@ -176,13 +176,13 @@
  "locals": {
   "1015": {
    "abate_underway": 49,
-   "abate_upcoming": 6,
+   "abate_upcoming": 7,
    "demo_underway": 25,
-   "demo_upcoming": 6,
+   "demo_upcoming": 7,
    "likely": 2,
    "maybe": 2,
    "not_confirmed": 2,
-   "sites": 80
+   "sites": 82
   },
   "1216": {
    "abate_underway": 8,
@@ -195,8 +195,8 @@
    "sites": 35
   },
   "125": {
-   "abate_underway": 7,
-   "abate_upcoming": 2,
+   "abate_underway": 6,
+   "abate_upcoming": 3,
    "demo_underway": 19,
    "demo_upcoming": 5,
    "likely": 0,
@@ -218,61 +218,61 @@
    "abate_underway": 37,
    "abate_upcoming": 16,
    "demo_underway": 57,
-   "demo_upcoming": 37,
+   "demo_upcoming": 39,
    "likely": 3,
    "maybe": 4,
    "not_confirmed": 3,
-   "sites": 114
+   "sites": 116
   },
   "245": {
    "abate_underway": 4,
-   "abate_upcoming": 3,
+   "abate_upcoming": 4,
    "demo_underway": 5,
-   "demo_upcoming": 5,
+   "demo_upcoming": 7,
    "likely": 0,
    "maybe": 0,
    "not_confirmed": 0,
-   "sites": 11
+   "sites": 13
   },
   "265": {
    "abate_underway": 36,
    "abate_upcoming": 11,
    "demo_underway": 60,
-   "demo_upcoming": 17,
-   "likely": 5,
-   "maybe": 7,
-   "not_confirmed": 5,
-   "sites": 110
+   "demo_upcoming": 18,
+   "likely": 6,
+   "maybe": 6,
+   "not_confirmed": 6,
+   "sites": 111
   },
   "310": {
-   "abate_underway": 211,
+   "abate_underway": 208,
    "abate_upcoming": 38,
-   "demo_underway": 157,
-   "demo_upcoming": 39,
+   "demo_underway": 154,
+   "demo_upcoming": 41,
    "likely": 0,
    "maybe": 1,
    "not_confirmed": 0,
-   "sites": 380
+   "sites": 378
   },
   "329": {
    "abate_underway": 7,
    "abate_upcoming": 7,
    "demo_underway": 39,
-   "demo_upcoming": 8,
+   "demo_upcoming": 9,
    "likely": 14,
    "maybe": 5,
    "not_confirmed": 14,
-   "sites": 56
+   "sites": 57
   },
   "423": {
    "abate_underway": 62,
-   "abate_upcoming": 8,
+   "abate_upcoming": 10,
    "demo_underway": 122,
-   "demo_upcoming": 15,
+   "demo_upcoming": 16,
    "likely": 15,
    "maybe": 4,
    "not_confirmed": 18,
-   "sites": 193
+   "sites": 196
   },
   "480": {
    "abate_underway": 3,
@@ -346,43 +346,43 @@
   },
   "809": {
    "abate_underway": 7,
-   "abate_upcoming": 1,
+   "abate_upcoming": 2,
    "demo_underway": 26,
    "demo_upcoming": 3,
    "likely": 1,
    "maybe": 0,
    "not_confirmed": 1,
-   "sites": 32
+   "sites": 33
   },
   "83": {
    "abate_underway": 10,
    "abate_upcoming": 2,
-   "demo_underway": 41,
-   "demo_upcoming": 5,
-   "likely": 8,
+   "demo_underway": 40,
+   "demo_upcoming": 6,
+   "likely": 7,
    "maybe": 0,
    "not_confirmed": 10,
    "sites": 55
   },
   "860": {
-   "abate_underway": 211,
+   "abate_underway": 208,
    "abate_upcoming": 38,
-   "demo_underway": 157,
-   "demo_upcoming": 39,
+   "demo_underway": 154,
+   "demo_upcoming": 41,
    "likely": 0,
    "maybe": 1,
    "not_confirmed": 0,
-   "sites": 380
+   "sites": 378
   },
   "894": {
-   "abate_underway": 49,
-   "abate_upcoming": 15,
+   "abate_underway": 50,
+   "abate_upcoming": 22,
    "demo_underway": 29,
-   "demo_upcoming": 21,
+   "demo_upcoming": 30,
    "likely": 6,
    "maybe": 2,
    "not_confirmed": 7,
-   "sites": 103
+   "sites": 112
   },
   "935": {
    "abate_underway": 13,
@@ -396,10 +396,10 @@
   }
  },
  "no_details": 2,
- "not_confirmed": 92,
+ "not_confirmed": 93,
  "not_confirmed_no_local": 8,
- "notifications": 999,
- "review": 97,
- "sites": 1518,
+ "notifications": 1011,
+ "review": 98,
+ "sites": 1537,
  "today": "2026-11-16"
 }
