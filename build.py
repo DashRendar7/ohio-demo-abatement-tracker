@@ -23,6 +23,22 @@ UA = 'ohio-demo-abatement-tracker/1.0 (public Ohio EPA notification data; github
 EPA = 'https://dam.assets.ohio.gov/raw/upload/epa.ohio.gov/Public/DAPC/NotificationList.xlsx'
 ZCTA = 'https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt'
 CENSUS = 'https://geocoding.geo.census.gov/geocoder/geographies/addressbatch'
+BAF = 'https://www2.census.gov/geo/docs/maps-data/data/baf2020/BlockAssign_ST39_OH.zip'
+GAZ = 'https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_gaz_place_39.txt'
+# ODOT's three-letter county codes, used in project names such as "HIG-73-21.04"
+ODOT = {'ADA': 'ADAMS', 'ALL': 'ALLEN', 'ASD': 'ASHLAND', 'ATB': 'ASHTABULA', 'ATH': 'ATHENS', 'AUG': 'AUGLAIZE', 'BEL': 'BELMONT',
+        'BRO': 'BROWN', 'BUT': 'BUTLER', 'CAR': 'CARROLL', 'CHP': 'CHAMPAIGN', 'CLA': 'CLARK', 'CLE': 'CLERMONT', 'CLI': 'CLINTON',
+        'COL': 'COLUMBIANA', 'COS': 'COSHOCTON', 'CRA': 'CRAWFORD', 'CUY': 'CUYAHOGA', 'DAR': 'DARKE', 'DEF': 'DEFIANCE', 'DEL': 'DELAWARE',
+        'ERI': 'ERIE', 'FAI': 'FAIRFIELD', 'FAY': 'FAYETTE', 'FRA': 'FRANKLIN', 'FUL': 'FULTON', 'GAL': 'GALLIA', 'GEA': 'GEAUGA',
+        'GRE': 'GREENE', 'GUE': 'GUERNSEY', 'HAM': 'HAMILTON', 'HAN': 'HANCOCK', 'HAR': 'HARDIN', 'HAS': 'HARRISON', 'HEN': 'HENRY',
+        'HIG': 'HIGHLAND', 'HOC': 'HOCKING', 'HOL': 'HOLMES', 'HUR': 'HURON', 'JAC': 'JACKSON', 'JEF': 'JEFFERSON', 'KNO': 'KNOX',
+        'LAK': 'LAKE', 'LAW': 'LAWRENCE', 'LIC': 'LICKING', 'LOG': 'LOGAN', 'LOR': 'LORAIN', 'LUC': 'LUCAS', 'MAD': 'MADISON',
+        'MAH': 'MAHONING', 'MAR': 'MARION', 'MED': 'MEDINA', 'MEG': 'MEIGS', 'MER': 'MERCER', 'MIA': 'MIAMI', 'MOE': 'MONROE',
+        'MOT': 'MONTGOMERY', 'MRG': 'MORGAN', 'MRW': 'MORROW', 'MUS': 'MUSKINGUM', 'NOB': 'NOBLE', 'OTT': 'OTTAWA', 'PAU': 'PAULDING',
+        'PER': 'PERRY', 'PIC': 'PICKAWAY', 'PIK': 'PIKE', 'POR': 'PORTAGE', 'PRE': 'PREBLE', 'PUT': 'PUTNAM', 'RIC': 'RICHLAND',
+        'ROS': 'ROSS', 'SAN': 'SANDUSKY', 'SCI': 'SCIOTO', 'SEN': 'SENECA', 'SHE': 'SHELBY', 'STA': 'STARK', 'SUM': 'SUMMIT',
+        'TRU': 'TRUMBULL', 'TUS': 'TUSCARAWAS', 'UNI': 'UNION', 'VAN': 'VAN WERT', 'VIN': 'VINTON', 'WAR': 'WARREN', 'WAS': 'WASHINGTON',
+        'WAY': 'WAYNE', 'WIL': 'WILLIAMS', 'WOO': 'WOOD', 'WYA': 'WYANDOT'}
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, 'data')
 OHIO = ZoneInfo('America/New_York')
@@ -192,6 +208,53 @@ def load_zip_counties():
     return dict(zc), names
 
 
+def load_places(names):
+    """Ohio towns (incorporated places and CDPs) -> the counties they lie in, from the Census 2020 block
+    assignment file (each block's ID carries its county) and the 2020 Gazetteer (place names)."""
+    import zipfile
+    raw, _ = get(BAF)
+    z = zipfile.ZipFile(io.BytesIO(raw))
+    f = next(n for n in z.namelist() if 'INCPLACE_CDP' in n.upper())
+    by_fp = defaultdict(set)
+    for line in z.read(f).decode('utf-8-sig').splitlines()[1:]:
+        p = line.split('|')
+        if len(p) >= 2 and p[1].strip():
+            by_fp[p[1].strip()].add(p[0][:5])
+    gaz, _ = get(GAZ)
+    towns = defaultdict(set)
+    for line in gaz.decode('utf-8-sig', 'replace').splitlines()[1:]:
+        p = line.split('\t')
+        if len(p) > 4 and p[1].startswith('39'):
+            name = re.sub(r'\s+(city|village|CDP|town)$', '', p[3].strip(), flags=re.I).upper()
+            towns[name] |= {names[c] for c in by_fp.get(p[1][2:], ()) if c in names}
+    towns = {k: sorted(v) for k, v in towns.items() if v}
+    if len(towns) < 1000:
+        raise SystemExit('Census town list has only %d Ohio towns; stopping without changes.' % len(towns))
+    return towns
+
+
+def town_in(text, towns, before_oh=True):
+    """The longest town name at the end of the street-and-town part of an address (or after "City of" /
+    "Village of" in an owner name). Returns (town, counties) or (None, [])."""
+    t = (text or '').upper()
+    if before_oh:
+        m = re.match(r'^(.*\S)\s+OH(?:IO)?\.?,?\s*(?:\d{4,5}\S*)?\s*$', t)
+        if not m:
+            return None, []
+        words = re.sub(r'[^A-Z0-9 \'.-]', ' ', m.group(1)).split()
+        for n in (4, 3, 2, 1):
+            if len(words) > n:
+                cand = ' '.join(words[-n:]).replace('ST.', 'ST')
+                for k in (cand, cand.replace(' ST ', ' ST. ')):
+                    if k in towns:
+                        return k, towns[k]
+        return None, []
+    m = re.search(r'\b(?:CITY|VILLAGE) OF ([A-Z .\'-]+?)(?:\s+(?:WATER|SCHOOL|SCHOOLS|BOARD|DEPT|DEPARTMENT|PUBLIC|PARKS|HOUSING)\b|$|[,(])', t)
+    if m and m.group(1).strip() in towns:
+        return m.group(1).strip(), towns[m.group(1).strip()]
+    return None, []
+
+
 def geocode(addresses, cache, today):
     """Census batch geocoding for addresses not yet in the cache (and unmatched ones after a while)."""
     todo = []
@@ -256,7 +319,7 @@ def geocode(addresses, cache, today):
         cache[a]['alt_when'] = today.isoformat()
 
 
-def place(addr, cache, zc, names):
+def place(addr, cache, zc, names, towns, building=''):
     """County for one site: (county name or '', basis, candidates, confirmed?)."""
     z = zip_of(addr)
     zcs = zc.get(z) if z else None
@@ -271,13 +334,51 @@ def place(addr, cache, zc, names):
     if alt and alt['county'].startswith('39') and (not zcs or alt['county'] in zcs):
         cty = names[alt['county']]
         return cty, 'Census address match with street and city entered separately (%s)' % alt['matched'], [cty], True
+    zn = {names[x] for x in zcs} if zcs else set()
+    codes = sorted({ODOT[m] for m in re.findall(r'\b([A-Z]{3})-\d', (addr or '') + ' ' + (building or '')) if m in ODOT})
+    if len(codes) == 1 and (not zn or codes[0] in zn):
+        return codes[0], 'ODOT county code in the project name (%s)' % next(k for k, v in ODOT.items() if v == codes[0]), [codes[0]], True
     if zcs and len(zcs) == 1:
         cty = names[next(iter(zcs))]
         return cty, 'ZIP %s lies entirely in this county' % z, [cty], True
     if zcs:
         cands = [names[x] for x in sorted(zcs, key=lambda x: -zcs[x])]
         return '', 'County not confirmed: ZIP %s spans %s, and the address could not be matched' % (z, ', '.join(x.title() for x in cands)), cands, False
+    town, tc = town_in(addr, towns)
+    if tc:
+        return '', 'County not confirmed: no usable ZIP and the address could not be matched; the town in the address, %s, lies in %s' % (town.title(), ', '.join(x.title() for x in tc)), list(tc), False
     return '', 'County not confirmed: no usable ZIP, and the address could not be matched', [], False
+
+
+def likely(s, towns, siblings):
+    """For a site whose county is not confirmed: a county that every available clue points to. Clues:
+    the town in the address or in the owner's name ("City of ...") lies entirely in one county; the owner
+    or building names a county; the other sites on the same notice were placed in one county. Returns
+    (county, [evidence]) or (None, [])."""
+    ev = []
+    for text, before_oh, what in ((s['address'], True, 'the town in the address'), (s['owner'], False, "the town in the owner's name")):
+        town, tc = town_in(text, towns, before_oh)
+        if town:
+            inside = [c for c in tc if not s['candidates'] or c in s['candidates']]
+            if len(inside) == 1 and (len(tc) == 1 or s['candidates']):
+                ev.append((inside[0], '%s, %s, %s' % (what, town.title(), 'lies in %s County' % inside[0].title() if len(tc) == 1 else 'lies partly in %s County, the only one the ZIP shares' % inside[0].title())))
+    named = sorted({c for c in set(ODOT.values()) if re.search(r'\b' + re.escape(c) + r'\s+COUNTY\b', (s['owner'] + ' ' + s['building']).upper())})
+    if len(named) == 1:
+        ev.append((named[0], 'the owner or building name mentions %s County' % named[0].title()))
+    sib = {o['county'] for o in siblings if o is not s and o['confirmed']}
+    if len(sib) == 1:
+        c = next(iter(sib))
+        ev.append((c, 'the other sites on notice %s are in %s County' % (s['id'], c.title())))
+    counties = {c for c, _ in ev}
+    if len(counties) == 1:
+        c = next(iter(counties))
+        if not s['candidates'] or c in s['candidates']:
+            return c, [e for _, e in ev]
+    return None, []
+
+
+def locals_of(counties):
+    return {k for k, cs in LOCALS.items() if set(counties) & set(cs)}
 
 
 def alerts(s):
@@ -323,13 +424,35 @@ def build(today=None, epa_raw=None, min_rows=20000):
         sites.append(s)
     geocode(sorted({s['address'] for s in sites if s['address']}), cache, today)
     json.dump(cache, open(cache_path, 'w'), indent=0, sort_keys=True)
+    towns = load_places(names)
+    json.dump(towns, open(os.environ.get('TOWN_COPY', '/tmp/towns.json'), 'w'))
     for s in sites:
         if s['address']:
-            s['county'], s['county_basis'], s['candidates'], s['confirmed'] = place(s['address'], cache, zc, names)
+            s['county'], s['county_basis'], s['candidates'], s['confirmed'] = place(s['address'], cache, zc, names, towns, s['building'])
         else:
             s['county'], s['county_basis'], s['candidates'], s['confirmed'] = '', 'County not confirmed: the notice has no address ("Contact Ohio EPA for Details")', [], False
         s['alerts'] = alerts(s)
-        s['locals'] = sorted((k for k, cs in LOCALS.items() if set(s['candidates']) & set(cs)), key=lambda k: (not k.isdigit(), int(k) if k.isdigit() else 0))
+    by_notice = defaultdict(list)
+    for s in sites:
+        by_notice[s['id']].append(s)
+    order = lambda ks: sorted(ks, key=lambda k: int(k))
+    for s in sites:
+        s['likely'], s['likely_evidence'] = (None, [])
+        if s['confirmed']:
+            s['locals'], s['maybe_locals'] = order(locals_of([s['county']])), []
+        else:
+            if not s['candidates'] and s['owner']:
+                town, tc = town_in(s['owner'], towns, False)
+                if tc:
+                    s['candidates'] = list(tc)
+                    s['county_basis'] += "; the town in the owner's name, %s, lies in %s" % (town.title(), ', '.join(x.title() for x in tc))
+            s['likely'], s['likely_evidence'] = likely(s, towns, by_notice[s['id']])
+            every = [locals_of([c]) for c in s['candidates']]
+            sure = set.intersection(*every) if every else set()  # Locals that cover every county the site could be in
+            if s['likely']:
+                sure |= locals_of([s['likely']])
+            s['locals'] = order(sure)
+            s['maybe_locals'] = order(set().union(*every) - sure) if every else []
         s['review'] = (not s['confirmed']) or ('ZIP in the notice' in s['county_basis'])
     sites.sort(key=lambda s: (s['county'] or 'ZZZ', min([d for d in (s['abate_start'], s['demo_start']) if d] or [datetime.date.max]), s['id'], s['address']))
     # Outputs
@@ -340,9 +463,12 @@ def build(today=None, epa_raw=None, min_rows=20000):
               'sites': len(sites), 'notifications': len({s['id'] for s in sites}),
               'confirmed': sum(1 for s in sites if s['confirmed']), 'not_confirmed': sum(1 for s in sites if not s['confirmed']),
               'review': sum(1 for s in sites if s['review']), 'no_details': no_details,
+              'likely': sum(1 for s in sites if s['likely']),
+              'not_confirmed_no_local': sum(1 for s in sites if not s['confirmed'] and not s['locals']),
               'basis': dict(sorted(_count(('Census address match' if s['county_basis'].startswith('Census') else 'ZIP in one county' if s['county_basis'].startswith('ZIP')
+                                            else 'ODOT county code' if s['county_basis'].startswith('ODOT') else 'Likely county' if s['likely']
                                             else 'County not confirmed') for s in sites).items())),
-              'locals': {k: _local_counts([s for s in sites if k in s['locals']]) for k in LOCALS},
+              'locals': {k: dict(_local_counts([s for s in sites if k in s['locals']]), maybe=sum(1 for s in sites if k in s['maybe_locals'])) for k in LOCALS},
               'local_labels': LOCAL_LABEL, 'local_counties': LOCALS}
     json.dump({'sites': [j(s) for s in sites]}, open(os.path.join(DATA, 'sites.json'), 'w'), indent=0, sort_keys=True)
     wanted = {'Local_%s.xlsx' % k for k in LOCALS} | {'All_Ohio.xlsx', 'Needs_review.xlsx'}
@@ -350,7 +476,8 @@ def build(today=None, epa_raw=None, min_rows=20000):
         if f.endswith('.xlsx') and f not in wanted:
             os.remove(os.path.join(DATA, 'reports', f))
     for k in LOCALS:
-        write_xlsx(os.path.join(DATA, 'reports', 'Local_%s.xlsx' % k), LOCAL_LABEL[k], [s for s in sites if k in s['locals']], status, LOCALS[k])
+        write_xlsx(os.path.join(DATA, 'reports', 'Local_%s.xlsx' % k), LOCAL_LABEL[k], [s for s in sites if k in s['locals']], status, LOCALS[k],
+                   maybe=[s for s in sites if k in s['maybe_locals']])
     write_xlsx(os.path.join(DATA, 'reports', 'All_Ohio.xlsx'), 'All Ohio', sites, status, None)
     write_xlsx(os.path.join(DATA, 'reports', 'Needs_review.xlsx'), 'Needs a county check', [s for s in sites if s['review']], status, None)
     json.dump(status, open(os.path.join(DATA, 'status.json'), 'w'), indent=1, sort_keys=True)
@@ -370,12 +497,20 @@ def _local_counts(ss):
             'abate_underway': sum(1 for s in ss if s['abate_status'] == 'Underway'),
             'demo_upcoming': sum(1 for s in ss if s['demo_status'] == 'Upcoming'),
             'demo_underway': sum(1 for s in ss if s['demo_status'] == 'Underway'),
-            'not_confirmed': sum(1 for s in ss if not s['confirmed'])}
+            'not_confirmed': sum(1 for s in ss if not s['confirmed']), 'likely': sum(1 for s in ss if s['likely'])}
+
+
+def county_label(s):
+    if s['county']:
+        return s['county'].title()
+    if s['likely']:
+        return 'Likely ' + s['likely'].title()
+    return ('Not confirmed: ' + ' or '.join(c.title() for c in s['candidates'])) if s['candidates'] else 'Not confirmed'
 
 
 SHEET_COLS = [  # (header, key or function, width)
-    ('Notification ID', 'id', 12), ('County', lambda s: s['county'].title() if s['county'] else 'Not confirmed', 13),
-    ('County check', lambda s: '' if (s['confirmed'] and not s['review']) else s['county_basis'], 40),
+    ('Notification ID', 'id', 12), ('County', county_label, 16),
+    ('County check', lambda s: '' if (s['confirmed'] and not s['review']) else (('Likely %s County: %s. ' % (s['likely'].title(), '; '.join(s['likely_evidence']))) if s['likely'] else '') + s['county_basis'], 50),
     ('Organizer alerts', lambda s: '; '.join(s['alerts']), 30),
     ('Owner', 'owner', 30), ('Owner phone', 'owner_phone', 14), ('Building', 'building', 30), ('Address', 'address', 40),
     ('Activity', 'activity', 22),
@@ -388,6 +523,7 @@ SHEET_COLS = [  # (header, key or function, width)
     ('Non-friable to remove: Cat 1 pipe (ft)', 'nf_rm_c1_pipe', 9), ('Non-friable to remove: Cat 1 surface (sq ft)', 'nf_rm_c1_surface', 9),
     ('Non-friable to remove: Cat 2 pipe (ft)', 'nf_rm_c2_pipe', 9), ('Non-friable to remove: Cat 2 surface (sq ft)', 'nf_rm_c2_surface', 9),
     ('Counted for Locals', lambda s: ', '.join(LOCAL_LABEL[k] for k in s['locals']), 18),
+    ('Might also be in', lambda s: ', '.join(LOCAL_LABEL[k] for k in s['maybe_locals']), 18),
 ]
 SHEETS = [('Abatement upcoming', 'abate_status', 'Upcoming', 'abate_start'), ('Abatement underway', 'abate_status', 'Underway', 'abate_end'),
           ('Demolition upcoming', 'demo_status', 'Upcoming', 'demo_start'), ('Demolition underway', 'demo_status', 'Underway', 'demo_end')]
@@ -398,7 +534,7 @@ def sheet_rows(sites, key, val, sortkey):
     return sorted(ss, key=lambda s: (s[sortkey] or datetime.date.max, s['id'], s['address']))
 
 
-def write_xlsx(path, title, sites, status, counties):
+def write_xlsx(path, title, sites, status, counties, maybe=None):
     wb = xlsxwriter.Workbook(path, {'constant_memory': False})
     wb.set_properties({'title': title, 'created': datetime.datetime(2026, 1, 1)})
     bold = wb.add_format({'bold': True, 'text_wrap': True, 'valign': 'top', 'bg_color': '#E8EEF6', 'border': 1})
@@ -414,13 +550,17 @@ def write_xlsx(path, title, sites, status, counties):
              'Upcoming: the phase starts after today. Underway: it started on or before today and its completion date is today or later.',
              'A phase with a start date but no completion date counts as underway for %d days after it starts.' % RECENT_NO_END_DAYS,
              'County: Census Bureau address match, or the ZIP code when the address could not be matched and the ZIP lies in one county.',
-             'Rows highlighted yellow could not be placed in a county for certain. They are listed for every county they could be in,',
-             'with the reason in "County check". Check the address before acting on them.']
+             'Rows highlighted yellow could not be placed in a county for certain; "County check" says why.',
+             '"Likely <county>": every available clue (the town in the address, a county named by the owner, other sites on the same notice) points to that county.',
+             'A site counts for a Local when its county is confirmed or likely, or when every county it could be in belongs to that Local.',
+             'Sites that may be in this Local but could also be elsewhere are on the "Might be in your area" sheet. Check the address before acting on them.']
     for i, t in enumerate(lines):
         ws.write(i, 0, t, bold if i == 0 else None)
     ws.set_column(0, 0, 120)
-    for name, key, val, sortkey in SHEETS:
-        rows = sheet_rows(sites, key, val, sortkey)
+    sheets = [(n, sheet_rows(sites, k, v, sk)) for n, k, v, sk in SHEETS]
+    if maybe is not None:
+        sheets.append(('Might be in your area', sorted(maybe, key=lambda s: (min([d for d in (s['abate_start'], s['demo_start']) if d] or [datetime.date.max]), s['id'], s['address']))))
+    for name, rows in sheets:
         ws = wb.add_worksheet(name)
         for c, (h, _, w) in enumerate(SHEET_COLS):
             ws.write(0, c, h, bold)
