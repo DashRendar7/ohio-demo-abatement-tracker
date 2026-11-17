@@ -1,0 +1,20 @@
+name: Inspect the EPA file, part 2 (one-off)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install openpyxl==3.1.5
+      - run: python3 probe2.py
+      - name: Save the report
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probe || true
+          git diff --cached --quiet || (git commit -m "EPA file inspection 2" && git push)
