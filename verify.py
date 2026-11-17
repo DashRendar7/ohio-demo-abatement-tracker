@@ -85,6 +85,10 @@ print('sites expected', sum(expect.values()), 'built', len(sites))
 zz = json.load(open(os.environ.get('ZIP_COPY', '/tmp/zipcounties.json')))
 zc, names = zz['zc'], zz['names']
 cache = json.load(open(os.path.join(DATA, 'geocache.json')))
+towns = json.load(open(os.environ.get('TOWN_COPY', '/tmp/towns.json')))
+by_id = {}
+for s in sites:
+    by_id.setdefault(s['id'], []).append(s)
 for s in sites:
     a = s['address']
     m = re.search(r'(?<!\d)(\d{5})(?:-\d{4})?\s*$', a)
@@ -97,6 +101,10 @@ for s in sites:
             second = (c.get('match') != 'Match' and names.get(alt.get('county')) == s['county'] and (z not in zc or alt.get('county') in zc[z]))
             if not (primary or second):
                 bad('census placement not backed by the cache: %s -> %s' % (a, s['county']))
+        elif s['county_basis'].startswith('ODOT'):
+            code = re.search(r'\(([A-Z]{3})\)', s['county_basis']).group(1)
+            if not (re.search(r'\b' + code + r'-\d', a + ' ' + s['building']) and (z not in zc or s['county'] in [names[x] for x in zc[z]])):
+                bad('ODOT placement not valid: %s -> %s' % (a, s['county']))
         elif s['county_basis'].startswith('ZIP'):
             alt_ok = str((c.get('alt') or {}).get('county', '')).startswith('39') and (z not in zc or c['alt']['county'] in zc[z])
             if not (z in zc and len(zc[z]) == 1 and names[next(iter(zc[z]))] == s['county']) or c.get('match') == 'Match' or alt_ok:
@@ -113,11 +121,41 @@ for s in sites:
         alt = c.get('alt') or {}
         if str(alt.get('county', '')).startswith('39') and (z not in zc or alt['county'] in zc[z]):
             bad('site left unconfirmed although the second Census pass matched it: %s' % a)
-        if z in zc and sorted(names[x] for x in zc[z]) != sorted(s['candidates']):
+        if z in zc and zc[z] and sorted(names[x] for x in zc[z]) != sorted(s['candidates']):
             bad('candidates differ from the ZIP counties: %s' % a)
-    want = sorted((k for k, cs in LOCALS.items() if set(s['candidates']) & set(cs)), key=lambda k: (not k.isdigit(), int(k) if k.isdigit() else 0))
-    if want != s['locals']:
-        bad('locals for %s: expected %s, got %s' % (a, want, s['locals']))
+    loc = lambda cs: {k for k, v in LOCALS.items() if set(cs) & set(v)}
+    if s['confirmed']:
+        sure, maybe = loc([s['county']]), set()
+        if s.get('likely'):
+            bad('confirmed site also has a likely county: %s' % a)
+    else:
+        every = [loc([c]) for c in s['candidates']]
+        sure = set.intersection(*every) if every else set()
+        if s.get('likely'):
+            sure |= loc([s['likely']])
+        maybe = (set().union(*every) - sure) if every else set()
+    if sorted(sure, key=int) != s['locals'] or sorted(maybe, key=int) != s['maybe_locals']:
+        bad('locals for %s: expected %s / %s, got %s / %s' % (a, sorted(sure), sorted(maybe), s['locals'], s['maybe_locals']))
+    if s.get('likely'):  # every clue behind a "likely" county must hold
+        L = s['likely']
+        if s['candidates'] and L not in s['candidates']:
+            bad('likely county outside the possible counties: %s' % a)
+        if not s['likely_evidence']:
+            bad('likely county without evidence: %s' % a)
+        for e in s['likely_evidence']:
+            if e.startswith('the town in'):
+                town = e.split(', ')[1].upper()
+                if L not in towns.get(town, []) or town.replace('.', '') not in (a + ' ' + s['owner']).upper().replace('.', ''):
+                    bad('town clue does not hold: %s (%s)' % (a, e))
+            elif e.startswith('the owner or building'):
+                if not re.search(r'\b' + L + r'\s+COUNTY\b', (s['owner'] + ' ' + s['building']).upper()):
+                    bad('owner clue does not hold: %s' % a)
+            elif e.startswith('the other sites'):
+                sib = {o['county'] for o in by_id[s['id']] if o is not s and o['confirmed']}
+                if sib != {L}:
+                    bad('notice clue does not hold: %s' % a)
+            else:
+                bad('unknown clue: %s' % e)
 
 # 3. Excel reports, sheet by sheet
 SHEETS = {'Abatement upcoming': ('abate_status', 'Upcoming'), 'Abatement underway': ('abate_status', 'Underway'),
@@ -135,6 +173,14 @@ for f, ss in files.items():
         need = Counter((s['id'], s['address']) for s in ss if s[k] == v)
         if have != need:
             bad('%s / %s: %d rows, expected %d' % (f, sh, sum(have.values()), sum(need.values())))
+    if f.startswith('Local_'):
+        k = f[6:-5]
+        rows = list(wb['Might be in your area'].iter_rows(values_only=True))
+        hd = list(rows[0]); ia, ii = hd.index('Address'), hd.index('Notification ID')
+        have = Counter((str(r[ii]), str(r[ia] or '')) for r in rows[1:])
+        need = Counter((s['id'], s['address']) for s in sites if k in s['maybe_locals'])
+        if have != need:
+            bad('%s / Might be in your area: %d rows, expected %d' % (f, sum(have.values()), sum(need.values())))
     wb.close()
 
 # 4. Status counts
