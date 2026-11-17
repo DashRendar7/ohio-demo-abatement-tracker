@@ -82,13 +82,18 @@ COLS = [  # (key, group contains, header contains)
     ('nf_stay_c2_pipe', 'not to be removed', 'nf cat-2 pipe'), ('nf_stay_c2_surface', 'not to be removed', 'nf cat-2 surface'),
     ('abate_contractor_id', None, 'abatement contractor id'), ('abate_contractor', None, 'abatement contractor name'),
     ('abate_phone', None, 'abatement phone'), ('specialist', None, 'on site specialist name'),
+    ('specialist_cert', None, 'specialist cert number'), ('cert_exp', None, 'cert expiration date'),
     ('setup', None, 'setup date'), ('abate_start', None, 'abatement date'), ('abate_end', None, 'completion date'),
     ('abate_hold', None, 'offsite on hold date'), ('abate_resume', None, 'onsite off hold date'),
     ('demo_contractor', None, 'demo contractor name'), ('demo_phone', None, 'demo contractor phone'),
     ('demo_start', None, 'demo start date'), ('demo_end', None, 'demo completion date'),
     ('demo_hold', None, 'demo on hold date'), ('demo_resume', None, 'demo off hold date'),
 ]
-DATES = ['setup', 'abate_start', 'abate_end', 'abate_hold', 'abate_resume', 'demo_start', 'demo_end', 'demo_hold', 'demo_resume']
+DATES = ['setup', 'abate_start', 'abate_end', 'abate_hold', 'abate_resume', 'demo_start', 'demo_end', 'demo_hold', 'demo_resume', 'cert_exp']
+# Quantities: written to the spreadsheets as numbers when the EPA cell holds a plain number. Everything else stays text
+# exactly as the EPA wrote it (so IDs, certificate numbers and phone numbers keep any leading zeros).
+NUMERIC = ['racm_pipe', 'racm_surface', 'racm_volume', 'nf_rm_c1_pipe', 'nf_rm_c1_surface', 'nf_rm_c2_pipe', 'nf_rm_c2_surface',
+           'nf_stay_c1_pipe', 'nf_stay_c1_surface', 'nf_stay_c2_pipe', 'nf_stay_c2_surface']
 
 
 def log(*a):
@@ -386,7 +391,7 @@ def alerts(s):
     o = s['owner'].upper()
     if any(w in o for w in ('LAND BANK', 'LANDBANK', 'REUTILIZATION', 'LAND REUTIL')):
         a.append('Land bank: one notice can cover many houses')
-    if any(w in s['building'].upper() for w in ('ANNUAL', 'MAINTENANCE', 'O&M', 'O & M')):
+    if any(w in s['building'].upper() for w in ('ANNUAL', 'MAINTENANCE', 'O&M', 'O & M')) or 'ANNUAL' in s['activity'].upper():
         a.append('Maintenance permit')
     for k1, k2 in (('abate_start', 'abate_end'), ('demo_start', 'demo_end')):
         if s[k1] and s[k2] and (s[k2] - s[k1]).days > 365:
@@ -508,22 +513,28 @@ def county_label(s):
     return ('Not confirmed: ' + ' or '.join(c.title() for c in s['candidates'])) if s['candidates'] else 'Not confirmed'
 
 
-SHEET_COLS = [  # (header, key or function, width)
+SHEET_COLS = [  # (header, key or function, width). Every column of the Ohio EPA list is here, plus the tracker's own.
     ('Notification ID', 'id', 12), ('County', county_label, 16),
     ('County check', lambda s: '' if (s['confirmed'] and not s['review']) else (('Likely %s County: %s. ' % (s['likely'].title(), '; '.join(s['likely_evidence']))) if s['likely'] else '') + s['county_basis'], 50),
+    ('Counted for Locals', lambda s: ', '.join(LOCAL_LABEL[k] for k in s['locals']), 18),
+    ('Might also be in', lambda s: ', '.join(LOCAL_LABEL[k] for k in s['maybe_locals']), 18),
     ('Organizer alerts', lambda s: '; '.join(s['alerts']), 30),
     ('Owner', 'owner', 30), ('Owner phone', 'owner_phone', 14), ('Building', 'building', 30), ('Address', 'address', 40),
     ('Activity', 'activity', 22),
     ('Abatement', 'abate_status', 11), ('Abatement start', 'abate_start', 12), ('Abatement completion', 'abate_end', 12),
     ('Abatement note', 'abate_note', 24), ('Setup date', 'setup', 12),
-    ('Abatement contractor', 'abate_contractor', 30), ('Abatement contractor phone', 'abate_phone', 14), ('On-site specialist', 'specialist', 20),
+    ('Abatement on hold (EPA: off-site on hold)', 'abate_hold', 12), ('Abatement resumed (EPA: on-site off hold)', 'abate_resume', 12),
+    ('Abatement contractor', 'abate_contractor', 30), ('Abatement contractor ID', 'abate_contractor_id', 12),
+    ('Abatement contractor phone', 'abate_phone', 14), ('On-site specialist', 'specialist', 20),
+    ('Specialist cert number', 'specialist_cert', 14), ('Specialist cert expires', 'cert_exp', 12),
     ('Demolition', 'demo_status', 11), ('Demolition start', 'demo_start', 12), ('Demolition completion', 'demo_end', 12),
-    ('Demolition note', 'demo_note', 24), ('Demolition contractor', 'demo_contractor', 30), ('Demolition contractor phone', 'demo_phone', 14),
+    ('Demolition note', 'demo_note', 24), ('Demolition on hold', 'demo_hold', 12), ('Demolition resumed', 'demo_resume', 12),
+    ('Demolition contractor', 'demo_contractor', 30), ('Demolition contractor phone', 'demo_phone', 14),
     ('RACM pipe (ft)', 'racm_pipe', 9), ('RACM surface (sq ft)', 'racm_surface', 9), ('RACM volume (cu ft)', 'racm_volume', 9),
     ('Non-friable to remove: Cat 1 pipe (ft)', 'nf_rm_c1_pipe', 9), ('Non-friable to remove: Cat 1 surface (sq ft)', 'nf_rm_c1_surface', 9),
     ('Non-friable to remove: Cat 2 pipe (ft)', 'nf_rm_c2_pipe', 9), ('Non-friable to remove: Cat 2 surface (sq ft)', 'nf_rm_c2_surface', 9),
-    ('Counted for Locals', lambda s: ', '.join(LOCAL_LABEL[k] for k in s['locals']), 18),
-    ('Might also be in', lambda s: ', '.join(LOCAL_LABEL[k] for k in s['maybe_locals']), 18),
+    ('Non-friable left in place: Cat 1 pipe (ft)', 'nf_stay_c1_pipe', 9), ('Non-friable left in place: Cat 1 surface (sq ft)', 'nf_stay_c1_surface', 9),
+    ('Non-friable left in place: Cat 2 pipe (ft)', 'nf_stay_c2_pipe', 9), ('Non-friable left in place: Cat 2 surface (sq ft)', 'nf_stay_c2_surface', 9),
 ]
 SHEETS = [('Abatement upcoming', 'abate_status', 'Upcoming', 'abate_start'), ('Abatement underway', 'abate_status', 'Underway', 'abate_end'),
           ('Demolition upcoming', 'demo_status', 'Upcoming', 'demo_start'), ('Demolition underway', 'demo_status', 'Underway', 'demo_end')]
@@ -535,13 +546,18 @@ def sheet_rows(sites, key, val, sortkey):
 
 
 def write_xlsx(path, title, sites, status, counties, maybe=None):
-    wb = xlsxwriter.Workbook(path, {'constant_memory': False})
+    wb = xlsxwriter.Workbook(path, {'constant_memory': False, 'strings_to_formulas': False, 'strings_to_urls': False, 'strings_to_numbers': False})
     wb.set_properties({'title': title, 'created': datetime.datetime(2026, 1, 1)})
     bold = wb.add_format({'bold': True, 'text_wrap': True, 'valign': 'top', 'bg_color': '#E8EEF6', 'border': 1})
     datef = wb.add_format({'num_format': 'yyyy-mm-dd'})
     warn = wb.add_format({'bg_color': '#FFF2CC'})
+    sheets = [(n, sheet_rows(sites, k, v, sk)) for n, k, v, sk in SHEETS]
+    if maybe is not None:
+        sheets.append(('Might be in your area', sorted(maybe, key=lambda s: (min([d for d in (s['abate_start'], s['demo_start']) if d] or [datetime.date.max]), s['id'], s['address']))))
     ws = wb.add_worksheet('About')
     lines = [title, '',
+             'Sites in this file: %d upcoming or underway%s.' % (len(sites), (', plus %d that might be in this area' % len(maybe)) if maybe is not None else ''),
+             'By sheet: ' + '; '.join('%s %d' % (n, len(r)) for n, r in sheets) + '. A site with both abatement and demolition can appear on two sheets.', '',
              'Source: Ohio EPA asbestos and demolition notification list (epa.ohio.gov), data current as of %s.' % status['epa_as_of'],
              'Projects upcoming or underway as of %s (Ohio time).' % status['today'],
              'Counties covered: %s.' % (', '.join(c.title() for c in counties) if counties else 'all of Ohio'),
@@ -553,13 +569,15 @@ def write_xlsx(path, title, sites, status, counties, maybe=None):
              'Rows highlighted yellow could not be placed in a county for certain; "County check" says why.',
              '"Likely <county>": every available clue (the town in the address, a county named by the owner, other sites on the same notice) points to that county.',
              'A site counts for a Local when its county is confirmed or likely, or when every county it could be in belongs to that Local.',
-             'Sites that may be in this Local but could also be elsewhere are on the "Might be in your area" sheet. Check the address before acting on them.']
+             'Sites that may be in this Local but could also be elsewhere are on the "Might be in your area" sheet. Check the address before acting on them.',
+             '',
+             'Columns: every column of the Ohio EPA list is included, with the same values. Dates are real dates (sortable and filterable).',
+             'The tracker adds: County, County check, Counted for Locals, Might also be in, Organizer alerts, and the Abatement and Demolition status and note columns.',
+             'Organizer alerts: land bank notices, maintenance or annual permits, and work scheduled to run more than a year.',
+             'Every value in these sheets is checked against a second, independent reading of the EPA list before the file is published.']
     for i, t in enumerate(lines):
         ws.write(i, 0, t, bold if i == 0 else None)
     ws.set_column(0, 0, 120)
-    sheets = [(n, sheet_rows(sites, k, v, sk)) for n, k, v, sk in SHEETS]
-    if maybe is not None:
-        sheets.append(('Might be in your area', sorted(maybe, key=lambda s: (min([d for d in (s['abate_start'], s['demo_start']) if d] or [datetime.date.max]), s['id'], s['address']))))
     for name, rows in sheets:
         ws = wb.add_worksheet(name)
         for c, (h, _, w) in enumerate(SHEET_COLS):
@@ -573,8 +591,8 @@ def write_xlsx(path, title, sites, status, counties, maybe=None):
                     ws.write_datetime(r, c, datetime.datetime(v.year, v.month, v.day), datef)
                 elif v in (None, ''):
                     ws.write_blank(r, c, None, fmt_row)
-                elif isinstance(v, str) and re.fullmatch(r'\d+(\.\d+)?', v) and k != 'id':
-                    ws.write_number(r, c, float(v), fmt_row)
+                elif k in NUMERIC and isinstance(v, str) and re.fullmatch(r'\d{1,3}(,\d{3})+(\.\d+)?|\d+(\.\d+)?', v):
+                    ws.write_number(r, c, float(v.replace(',', '')), fmt_row)
                 else:
                     ws.write(r, c, v, fmt_row)
         ws.freeze_panes(1, 2)
