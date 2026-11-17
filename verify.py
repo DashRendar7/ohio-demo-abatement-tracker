@@ -183,6 +183,109 @@ for f, ss in files.items():
             bad('%s / Might be in your area: %d rows, expected %d' % (f, sum(have.values()), sum(need.values())))
     wb.close()
 
+# 3b. Every EPA value in every spreadsheet row, cell by cell, against this independent reading of the EPA list.
+# The EPA columns are found here by their own header text (and, for the repeated non-friable headers, by the group row
+# above them), not by the builder's column list.
+grp = [str(c or '') for c in grid[h - 1]] + [''] * len(head)
+def span_after(label_test):
+    i = next(j for j, g in enumerate(grp) if label_test(g.lower()))
+    cols = list(range(i, i + 4))
+    if not all(re.sub(r'\s+', ' ', head[j]).lower().startswith('nf cat-') for j in cols):
+        bad('non-friable columns not where expected under "%s"' % grp[i])
+    return cols
+nf_rm = span_after(lambda g: 'to be removed' in g and 'not to be removed' not in g)
+nf_keep = span_after(lambda g: 'not to be removed' in g)
+hn = [re.sub(r'\s+', ' ', x).lower() for x in head]
+def one(name):
+    hits = [j for j, x in enumerate(hn) if x.startswith(name)]
+    if len(hits) != 1:
+        bad('EPA column "%s" found %d times' % (name, len(hits)))
+    return hits[0]
+CELL = [('Notification ID', one('notification id'), 't'), ('Owner', one('owner name'), 't'), ('Owner phone', one('owner phone'), 't'),
+        ('Building', one('building name'), 't'), ('Address', one('building address'), 't'), ('Activity', one('on site activity'), 't'),
+        ('RACM pipe (ft)', one('racm pipe'), 'n'), ('RACM surface (sq ft)', one('racm surface'), 'n'), ('RACM volume (cu ft)', one('racm volume'), 'n'),
+        ('Abatement contractor ID', one('abatement contractor id'), 't'), ('Abatement contractor', one('abatement contractor name'), 't'),
+        ('Abatement contractor phone', one('abatement phone'), 't'), ('On-site specialist', one('on site specialist name'), 't'),
+        ('Specialist cert number', one('specialist cert number'), 't'), ('Specialist cert expires', one('cert expiration date'), 'd'),
+        ('Setup date', one('setup date'), 'd'), ('Abatement start', one('abatement date'), 'd'), ('Abatement completion', one('completion date'), 'd'),
+        ('Abatement on hold (EPA: off-site on hold)', one('offsite on hold date'), 'd'), ('Abatement resumed (EPA: on-site off hold)', one('onsite off hold date'), 'd'),
+        ('Demolition contractor', one('demo contractor name'), 't'), ('Demolition contractor phone', one('demo contractor phone'), 't'),
+        ('Demolition start', one('demo start date'), 'd'), ('Demolition completion', one('demo completion date'), 'd'),
+        ('Demolition on hold', one('demo on hold date'), 'd'), ('Demolition resumed', one('demo off hold date'), 'd')]
+for lab, cols in (('Non-friable to remove', nf_rm), ('Non-friable left in place', nf_keep)):
+    for j, (cat, what) in zip(cols, [('1', 'pipe (ft)'), ('1', 'surface (sq ft)'), ('2', 'pipe (ft)'), ('2', 'surface (sq ft)')]):
+        CELL.append(('%s: Cat %s %s' % (lab, cat, what), j, 'n'))
+
+def norm_cell(v, kind):
+    if v is None or v == '':
+        return ''
+    if kind == 'd':
+        dd = day(v)
+        return dd.isoformat() if dd else 'not a date: %r' % (v,)
+    if isinstance(v, bool):
+        return str(v)
+    if isinstance(v, (int, float)):
+        return repr(float(v)) if kind == 'n' else (str(int(v)) if float(v).is_integer() else repr(v))
+    s = re.sub(r'\s+', ' ', str(v)).strip()
+    if kind == 'n' and re.fullmatch(r'\d{1,3}(,\d{3})+(\.\d+)?|\d+(\.\d+)?', s):
+        return repr(float(s.replace(',', '')))
+    return s
+
+src = Counter()
+seen2 = set()
+for r in grid[h + 1:]:
+    if all(c in (None, '') for c in r):
+        continue
+    tk = tuple(repr(c) for c in r)
+    if tk in seen2:
+        continue
+    seen2.add(tk)
+    a = state(day(r[I['as']]), day(r[I['ae']]))
+    d = state(day(r[I['ds']]), day(r[I['de']]))
+    if a or d:
+        src[(a, d) + tuple(norm_cell(r[j] if j < len(r) else None, kind) for _, j, kind in CELL)] += 1
+loc_of = {}
+for s in sites:
+    loc_of.setdefault((s['id'], s['address'], s['abate_status'], s['demo_status']), (s['locals'], s['maybe_locals']))
+review_keys = {(s['id'], s['address'], s['abate_status'], s['demo_status']) for s in sites if s['review']}
+checked = 0
+for f, ss in files.items():
+    wb = openpyxl.load_workbook(os.path.join(DATA, 'reports', f), read_only=True)
+    names = list(SHEETS) + (['Might be in your area'] if f.startswith('Local_') else [])
+    k_local = f[6:-5] if f.startswith('Local_') else None
+    for sh in names:
+        rows = list(wb[sh].iter_rows(values_only=True))
+        hd = list(rows[0])
+        missing = [lab for lab, _, _ in CELL if lab not in hd] + [x for x in ('Abatement', 'Demolition') if x not in hd]
+        if missing:
+            bad('%s / %s: columns missing: %s' % (f, sh, missing))
+            continue
+        have = Counter((r[hd.index('Abatement')] or '', r[hd.index('Demolition')] or '') + tuple(norm_cell(r[hd.index(lab)], kind) for lab, _, kind in CELL) for r in rows[1:])
+        need = Counter()
+        for key, n in src.items():
+            a, d = key[0], key[1]
+            ident = (key[2], re.sub(r'\s+', ' ', key[6]).strip(), a, d)  # id, address, statuses
+            locs, maybes = loc_of.get(ident, ([], []))
+            if f == 'Needs_review.xlsx':
+                inc = ident in review_keys
+            elif k_local is None:
+                inc = True
+            elif sh == 'Might be in your area':
+                inc = k_local in maybes
+            else:
+                inc = k_local in locs
+            if not inc:
+                continue
+            if sh in SHEETS and {'abate_status': a, 'demo_status': d}[SHEETS[sh][0]] != SHEETS[sh][1]:
+                continue
+            need[key] += n
+        if have != need:
+            diff = list((have - need).items())[:2] + list((need - have).items())[:2]
+            bad('%s / %s: cell values differ from the EPA list, e.g. %s' % (f, sh, str(diff)[:600]))
+        checked += sum(have.values())
+    wb.close()
+print('cells checked against the EPA list: %d rows x %d columns' % (checked, len(CELL)))
+
 # 4. Status counts
 for k in LOCALS:
     ss = [s for s in sites if k in s['locals']]
