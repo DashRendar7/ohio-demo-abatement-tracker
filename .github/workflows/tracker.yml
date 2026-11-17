@@ -1,0 +1,34 @@
+name: Update the tracker from the Ohio EPA list
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'   # every 6 hours (GitHub may start it a little late)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tracker
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install
+        run: pip install openpyxl==3.1.5 xlsxwriter==3.2.0 python-calamine==0.8.2
+      - name: Build from the Ohio EPA list
+        run: python3 build.py
+      - name: Check every number independently
+        run: python3 verify.py
+      - name: Save (only if every check passed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "nothing to save"; exit 0; fi
+          git commit -m "Tracker update $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
