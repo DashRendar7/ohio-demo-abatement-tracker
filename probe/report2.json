@@ -1,0 +1,1404 @@
+{
+ "dups": {
+  "ids_with_more_than_one_row": 8117,
+  "max_rows_per_id": 67,
+  "size_hist": [
+   [
+    2,
+    3072
+   ],
+   [
+    3,
+    1390
+   ],
+   [
+    4,
+    917
+   ],
+   [
+    5,
+    783
+   ],
+   [
+    6,
+    415
+   ],
+   [
+    7,
+    295
+   ],
+   [
+    8,
+    214
+   ],
+   [
+    10,
+    180
+   ],
+   [
+    9,
+    178
+   ],
+   [
+    11,
+    101
+   ]
+  ],
+  "fully_identical_groups": 178,
+  "columns_that_differ": [
+   [
+    "Building Address",
+    7048
+   ],
+   [
+    "BUILDING NAME",
+    3757
+   ],
+   [
+    "RACM Surface Area\n(sq ft)",
+    3724
+   ],
+   [
+    "COMPLETION DATE",
+    3099
+   ],
+   [
+    "NF Cat-1 Surface Area\n(sq ft)",
+    2723
+   ],
+   [
+    "Demo Completion Date",
+    2567
+   ],
+   [
+    "SETUP DATE",
+    2529
+   ],
+   [
+    "Specialist Cert Number",
+    2490
+   ],
+   [
+    "Cert Expiration Date",
+    2472
+   ],
+   [
+    "On Site Specialist Name",
+    2455
+   ],
+   [
+    "ABATEMENT DATE",
+    2393
+   ],
+   [
+    "Demo Start Date",
+    2301
+   ],
+   [
+    "NF Cat-2 Surface Area\n(sq ft)",
+    2205
+   ],
+   [
+    "RACM PIPE\n(ft)",
+    1374
+   ],
+   [
+    "OFFSITE ON HOLD DATE",
+    1075
+   ],
+   [
+    "NF Cat-1 Surface Area(sq ft)",
+    1040
+   ],
+   [
+    "Demo Contractor Phone",
+    1019
+   ],
+   [
+    "Demo Contractor Name",
+    975
+   ],
+   [
+    "ONSITE OFF HOLD DATE",
+    974
+   ],
+   [
+    "On Site Activity",
+    765
+   ],
+   [
+    "Demo On Hold Date",
+    501
+   ],
+   [
+    "Demo Off Hold Date",
+    428
+   ],
+   [
+    "NF Cat-2 Surface Area (sq ft)",
+    256
+   ],
+   [
+    "RACM Volume\n(cubic ft)",
+    250
+   ],
+   [
+    "NF Cat-2 Pipe (ft)",
+    203
+   ],
+   [
+    "NF Cat-1 Pipe\n(ft)",
+    149
+   ],
+   [
+    "NF Cat-1 Pipe (ft)",
+    121
+   ],
+   [
+    "NF Cat-2 Pipe\n(ft)",
+    87
+   ]
+  ]
+ },
+ "dup_examples": [
+  {
+   "id": 235935,
+   "row_positions": [
+    4,
+    5
+   ],
+   "differs": {
+    "Building Address": [
+     "2074 Hard Road Columbus OH 43235",
+     "2100 Hard Road Columbus OH 43235"
+    ]
+   },
+   "address": "2074 Hard Road Columbus OH 43235",
+   "activity": "Demolition ONLY"
+  },
+  {
+   "id": 236754,
+   "row_positions": [
+    8,
+    9
+   ],
+   "differs": {
+    "Building Address": [
+     "488 South Yearling Road Whitehall OH 43213",
+     "494 South Yearling Road Whitehall OH 43213"
+    ],
+    "RACM Surface Area\n(sq ft)": [
+     "905",
+     "7"
+    ],
+    "NF Cat-2 Surface Area\n(sq ft)": [
+     "4",
+     "0"
+    ]
+   },
+   "address": "488 South Yearling Road Whitehall OH 43213",
+   "activity": "Abatement ONLY"
+  },
+  {
+   "id": 236318,
+   "row_positions": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "differs": {
+    "BUILDING NAME": [
+     "Ellsdale Homes",
+     "Jackson Sherrick",
+     "Jackson Sherrick",
+     "Jackson Sherrick",
+     "Jackson Sherrick",
+     "Leshdale Homes",
+     "Jackson Sherrick"
+    ],
+    "Building Address": [
+     "3937 33rd St NE Canton OH 44705",
+     "1208 Eldon Cir Canton OH 44707",
+     "1119 Baker St. Canton OH 44707",
+     "1526 Robin CT SE Canton OH 44707",
+     "1526 Robin CT SE Canton OH 44707",
+     "3612 Ellis Ave N Canton OH 44705",
+     "1332 13th Street Canton OH 44707"
+    ],
+    "RACM Surface Area\n(sq ft)": [
+     "N/A",
+     "971",
+     "3",
+     "736",
+     "736",
+     "3",
+     "33"
+    ],
+    "NF Cat-1 Surface Area(sq ft)": [
+     "575",
+     "0",
+     "0",
+     "0",
+     "0",
+     "378",
+     "0"
+    ],
+    "NF Cat-2 Surface Area\n(sq ft)": [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "10",
+     "0"
+    ],
+    "On Site Specialist Name": [
+     "Duvere Reid",
+     "Duvere Reid",
+     "Duvere Reid",
+     "Duvere Reid",
+     "Robert DeAngelis",
+     "Duvere Reid",
+     "Duvere Reid"
+    ],
+    "Specialist Cert Number": [
+     "AS32117",
+     "AS32117",
+     "AS32117",
+     "AS32117",
+     "AS32121",
+     "AS32117",
+     "AS32117"
+    ],
+    "Cert Expiration Date": [
+     "2027-04-27 00:00:00",
+     "2027-04-27 00:00:00",
+     "2027-04-27 00:00:00",
+     "2027-04-27 00:00:00",
+     "2027-11-09 00:00:00",
+     "2027-04-27 00:00:00",
+     "2027-04-27 00:00:00"
+    ],
+    "SETUP DATE": [
+     "2026-11-04 05:00:00",
+     "2026-11-16 05:00:00",
+     "2026-11-27 05:00:00",
+     "2026-11-09 05:00:00",
+     "2026-11-09 05:00:00",
+     "2026-11-02 05:00:00",
+     "2026-11-27 05:00:00"
+    ],
+    "ABATEMENT DATE": [
+     "2026-11-04 05:00:00",
+     "2026-11-16 05:00:00",
+     "2026-11-27 05:00:00",
+     "2026-11-09 05:00:00",
+     "2026-11-09 05:00:00",
+     "2026-11-02 05:00:00",
+     "2026-11-27 05:00:00"
+    ],
+    "COMPLETION DATE": [
+     "2026-11-27 05:00:00",
+     "2026-11-20 05:00:00",
+     "2026-11-27 05:00:00",
+     "2026-11-27 05:00:00",
+     "2026-11-27 05:00:00",
+     "2026-11-27 05:00:00",
+     "2026-11-27 05:00:00"
+    ],
+    "OFFSITE ON HOLD DATE": [
+     "2026-11-09 05:00:00",
+     "None",
+     "None",
+     "2026-11-16 05:00:00",
+     "2026-11-16 05:00:00",
+     "2026-11-05 05:00:00",
+     "None"
+    ]
+   },
+   "address": "3937 33rd St NE Canton OH 44705",
+   "activity": "Abatement ONLY"
+  },
+  {
+   "id": 236653,
+   "row_positions": [
+    23,
+    24,
+    25,
+    26,
+    27
+   ],
+   "differs": {
+    "BUILDING NAME": [
+     "House",
+     "Apartment Building",
+     "House",
+     "Commercial",
+     "House"
+    ],
+    "Building Address": [
+     "406 S. Franklin St. Eaton OH 45320",
+     "46 S. Main St. Camden OH 45311",
+     "6036 Lexington Salem Rd. West Alexandria OH 45381",
+     "100 S. Washington St. New Paris OH 45347",
+     "4092 Bantas Creek Rd. West Alexandria OH 45381"
+    ],
+    "On Site Activity": [
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition ONLY",
+     "Demolition and Abatement"
+    ],
+    "RACM Surface Area\n(sq ft)": [
+     "990",
+     "65",
+     "1316",
+     "N/A",
+     "80"
+    ],
+    "NF Cat-2 Surface Area\n(sq ft)": [
+     "1400",
+     "0",
+     "0",
+     "0",
+     "2400"
+    ],
+    "NF Cat-1 Surface Area\n(sq ft)": [
+     "0",
+     "500",
+     "0",
+     "0",
+     "0"
+    ],
+    "On Site Specialist Name": [
+     "Terry Rister",
+     "Justin Kopp",
+     "Terry Rister",
+     "N/A",
+     "Justin Kopp"
+    ],
+    "Specialist Cert Number": [
+     "AS25009",
+     "AS32519",
+     "AS25009",
+     "None",
+     "AS32519"
+    ],
+    "Cert Expiration Date": [
+     "2027-03-11 00:00:00",
+     "2027-05-17 00:00:00",
+     "2027-03-11 00:00:00",
+     "None",
+     "2027-05-17 00:00:00"
+    ],
+    "SETUP DATE": [
+     "2026-11-09 05:00:00",
+     "2026-11-09 05:00:00",
+     "2026-11-09 05:00:00",
+     "None",
+     "2026-11-09 05:00:00"
+    ],
+    "ABATEMENT DATE": [
+     "2026-11-09 05:00:00",
+     "2026-11-09 05:00:00",
+     "2026-11-09 05:00:00",
+     "None",
+     "2026-11-09 05:00:00"
+    ],
+    "COMPLETION DATE": [
+     "2026-11-20 05:00:00",
+     "2026-11-20 05:00:00",
+     "2026-11-20 05:00:00",
+     "None",
+     "2026-11-20 05:00:00"
+    ],
+    "OFFSITE ON HOLD DATE": [
+     "2026-11-13 05:00:00",
+     "2026-11-13 05:00:00",
+     "2026-11-13 05:00:00",
+     "None",
+     "2026-11-13 05:00:00"
+    ],
+    "Demo Start Date": [
+     "2026-11-23 05:00:00",
+     "2026-11-23 05:00:00",
+     "2026-11-23 05:00:00",
+     "2026-11-09 05:00:00",
+     "2026-11-23 05:00:00"
+    ]
+   },
+   "address": "406 S. Franklin St. Eaton OH 45320",
+   "activity": "Demolition and Abatement"
+  },
+  {
+   "id": 236753,
+   "row_positions": [
+    28,
+    29,
+    30
+   ],
+   "differs": {
+    "Building Address": [
+     "3360 Swishers Mill Rd. Lewisburg OH 45338",
+     "2449 Lexington Rd. Eaton OH 45320",
+     "1496 Surface Rd. Eaton OH 45320"
+    ],
+    "On Site Activity": [
+     "Demolition ONLY",
+     "Demolition and Abatement",
+     "Demolition and Abatement"
+    ],
+    "RACM Surface Area\n(sq ft)": [
+     "N/A",
+     "2000",
+     "5110"
+    ],
+    "NF Cat-2 Surface Area\n(sq ft)": [
+     "0",
+     "1300",
+     "1914"
+    ],
+    "NF Cat-1 Surface Area\n(sq ft)": [
+     "250",
+     "575",
+     "250"
+    ],
+    "On Site Specialist Name": [
+     "N/A",
+     "Justin Kopp",
+     "Terry Rister"
+    ],
+    "Specialist Cert Number": [
+     "None",
+     "AS32519",
+     "AS25009"
+    ],
+    "Cert Expiration Date": [
+     "None",
+     "2027-05-17 00:00:00",
+     "2027-03-11 00:00:00"
+    ],
+    "SETUP DATE": [
+     "None",
+     "2026-11-16 05:00:00",
+     "2026-11-16 05:00:00"
+    ],
+    "ABATEMENT DATE": [
+     "None",
+     "2026-11-16 05:00:00",
+     "2026-11-16 05:00:00"
+    ],
+    "COMPLETION DATE": [
+     "None",
+     "2026-11-27 05:00:00",
+     "2026-11-27 05:00:00"
+    ],
+    "OFFSITE ON HOLD DATE": [
+     "None",
+     "2026-11-13 05:00:00",
+     "2026-11-13 05:00:00"
+    ],
+    "Demo Start Date": [
+     "2026-11-13 05:00:00",
+     "2026-11-30 05:00:00",
+     "2026-11-30 05:00:00"
+    ]
+   },
+   "address": "3360 Swishers Mill Rd. Lewisburg OH 45338",
+   "activity": "Demolition ONLY"
+  },
+  {
+   "id": 236208,
+   "row_positions": [
+    32,
+    33
+   ],
+   "differs": {
+    "BUILDING NAME": [
+     "Washington Jr. High School",
+     "Jefferson Jr. High"
+    ],
+    "Building Address": [
+     "5700 Whitmer Drive Toledo OH 43613",
+     "5530 Whitmer Drive Toledo OH 43613"
+    ],
+    "RACM PIPE\n(ft)": [
+     "3015",
+     "4655"
+    ],
+    "RACM Surface Area\n(sq ft)": [
+     "700",
+     "87"
+    ],
+    "NF Cat-1 Surface Area(sq ft)": [
+     "11430",
+     "5200"
+    ],
+    "NF Cat-2 Surface Area\n(sq ft)": [
+     "150",
+     "11487"
+    ],
+    "OFFSITE ON HOLD DATE": [
+     "2026-11-16 05:00:00",
+     "2026-10-01 04:00:00"
+    ],
+    "ONSITE OFF HOLD DATE": [
+     "None",
+     "2026-11-16 05:00:00"
+    ]
+   },
+   "address": "5700 Whitmer Drive Toledo OH 43613",
+   "activity": "Abatement ONLY"
+  },
+  {
+   "id": 236955,
+   "row_positions": [
+    50,
+    51
+   ],
+   "differs": {
+    "BUILDING NAME": [
+     "Residential House",
+     "Residence House"
+    ],
+    "Building Address": [
+     "13491 Walhonding Rd Pleasant City OH 43772",
+     "8198 Banner Rd Pleasant City OH 43772"
+    ],
+    "Demo Start Date": [
+     "2026-11-27 05:00:00",
+     "2026-11-23 05:00:00"
+    ],
+    "Demo Completion Date": [
+     "2026-11-30 05:00:00",
+     "2026-11-25 05:00:00"
+    ]
+   },
+   "address": "13491 Walhonding Rd Pleasant City OH 43772",
+   "activity": "Demolition ONLY"
+  },
+  {
+   "id": 236350,
+   "row_positions": [
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75
+   ],
+   "differs": {
+    "Building Address": [
+     "1219 Oak Knoll Warren OH 44484",
+     "432 Scott Warren OH 44483",
+     "2480 Milton Warren OH 44484",
+     "1625 Youngstown Warren OH 44484",
+     "1705 Ogden Warren OH 44483",
+     "1053 Homewood Warren OH 44484",
+     "333 Hall Warren OH 44483",
+     "1262 Youngstown Warren OH 44484",
+     "2736 Draper Warren OH 44484",
+     "2699 Fairview Warren OH 44484",
+     "1925 Wick Warren OH 44484",
+     "1753 Burton Warren OH 44484",
+     "1584 Brighton Warren OH 44483",
+     "235 Forest Warren OH 44483",
+     "196 Charles Warren OH 44483",
+     "1123 Harrison Warren OH 44483",
+     "531 Douglas Warren OH 44483",
+     "385 North Warren OH 44483",
+     "206 Logan Warren OH 44483"
+    ],
+    "On Site Activity": [
+     "Demolition and Abatement",
+     "Demolition ONLY",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition ONLY",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement",
+     "Demolition and Abatement"
+    ],
+    "RACM Surface Area\n(sq ft)": [
+     "20",
+     "N/A",
+     "111",
+     "174",
+     "3570",
+     "197",
+     "4710",
+     "N/A",
+     "N/A",
+     "30",
+     "20",
+     "85",
+     "4080",
+     "2998",
+     "80",
+     "110",
+     "N/A",
+     "104",
+     "160"
+    ],
+    "NF Cat-1 Surface Area(sq ft)": [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1878",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    "NF Cat-2 Surface Area\n(sq ft)": [
+     "0",
+     "0",
+     "2206",
+     "0",
+     "0",
+     "0",
+     "1600",
+     "7",
+     "0",
+     "0",
+     "0",
+     "0",
+     "7",
+     "0",
+     "2890",
+     "0",
+     "6",
+     "0",
+     "0"
+    ],
+    "NF Cat-1 Surface Area\n(sq ft)": [
+     "1312",
+     "0",
+     "1192",
+     "1205",
+     "3995",
+     "1116",
+     "980",
+     "6938",
+     "0",
+     "750",
+     "1740",
+     "860",
+     "850",
+     "2102",
+     "1410",
+     "1150",
+     "1170",
+     "1136",
+     "1834"
+    ],
+    "On Site Specialist Name": [
+     "Johnathan Massingill",
+     "N/A",
+     "Andreas Fox",
+     "Andreas Fox",
+     "Jerry Rowland",
+     "Andreas Fox",
+     "Jerry Rowland",
+     "Andreas Fox",
+     "N/A",
+     "Andreas Fox",
+     "Johnathan Massingill",
+     "Andreas Fox",
+     "Andreas Fox",
+     "Andreas Fox",
+     "Andreas Fox",
+     "Jerry Rowland",
+     "Jerry Rowland",
+     "Jerry Rowland",
+     "Jerry Rowland"
+    ],
+    "Specialist Cert Number": [
+     "AS552718",
+     "None",
+     "AS544792",
+     "AS544792",
+     "AS551817",
+     "AS544792",
+     "AS551817",
+     "AS544792",
+     "None",
+     "AS544792",
+     "AS552718",
+     "AS544792",
+     "AS544792",
+     "AS544792",
+     "AS544792",
+     "AS551817",
+     "AS551817",
+     "AS551817",
+     "AS551817"
+    ],
+    "Cert Expiration Date": [
+     "2027-05-13 00:00:00",
+     "None",
+     "2027-08-07 00:00:00",
+     "2027-08-07 00:00:00",
+     "2027-07-28 00:00:00",
+     "2027-08-07 00:00:00",
+     "2027-07-28 00:00:00",
+     "2027-08-07 00:00:00",
+     "None",
+     "2027-08-07 00:00:00",
+     "2027-05-13 00:00:00",
+     "2027-08-07 00:00:00",
+     "2027-08-07 00:00:00",
+     "2027-08-07 00:00:00",
+     "2027-08-07 00:00:00",
+     "2027-07-28 00:00:00",
+     "2027-07-28 00:00:00",
+     "2027-07-28 00:00:00",
+     "2027-07-28 00:00:00"
+    ],
+    "SETUP DATE": [
+     "2026-10-20 04:00:00",
+     "None",
+     "2026-10-21 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-23 05:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-09 05:00:00",
+     "2026-11-02 05:00:00",
+     "None",
+     "2026-10-20 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-02 05:00:00",
+     "2026-11-09 05:00:00",
+     "2026-10-30 04:00:00",
+     "2026-11-02 05:00:00",
+     "2026-10-22 04:00:00",
+     "2026-10-22 04:00:00",
+     "2026-10-22 04:00:00"
+    ],
+    "ABATEMENT DATE": [
+     "2026-10-20 04:00:00",
+     "None",
+     "2026-10-21 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-23 05:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-10 05:00:00",
+     "2026-11-02 05:00:00",
+     "None",
+     "2026-10-20 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-03 05:00:00",
+     "2026-11-10 05:00:00",
+     "2026-10-30 04:00:00",
+     "2026-11-02 05:00:00",
+     "2026-10-22 04:00:00",
+     "2026-10-22 04:00:00",
+     "2026-10-22 04:00:00"
+    ],
+    "COMPLETION DATE": [
+     "2026-10-20 04:00:00",
+     "None",
+     "2026-10-21 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-25 05:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-18 05:00:00",
+     "2026-11-02 05:00:00",
+     "None",
+     "2026-10-20 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-10-20 04:00:00",
+     "2026-11-05 05:00:00",
+     "2026-11-25 05:00:00",
+     "2026-10-30 04:00:00",
+     "2026-11-02 05:00:00",
+     "2026-10-22 04:00:00",
+     "2026-10-22 04:00:00",
+     "2026-10-22 04:00:00"
+    ],
+    "OFFSITE ON HOLD DATE": [
+     "None",
+     "None",
+     "None",
+     "None",
+     "None",
+     "None",
+     "2026-11-12 05:00:00",
+     "None",
+     "None",
+     "None",
+     "None",
+     "None",
+     "None",
+     "2026-11-12 05:00:00",
+     "None",
+     "None",
+     "None",
+     "None",
+     "None"
+    ],
+    "ONSITE OFF HOLD DATE": [
+     "None",
+     "None",
+     "None",
+     "None",
+     "None",
+     "None",
+     "2026-11-18 05:00:00",
+     "None",
+     "None",
+     "None",
+     "None",
+     "None",
+     "None",
+     "2026-11-19 05:00:00",
+     "None",
+     "None",
+     "None",
+     "None",
+     "None"
+    ],
+    "Demo Start Date": [
+     "2026-10-26 04:00:00",
+     "2026-10-13 04:00:00",
+     "2026-11-06 05:00:00",
+     "2026-10-26 04:00:00",
+     "2026-11-27 05:00:00",
+     "2026-10-26 04:00:00",
+     "2026-11-13 05:00:00",
+     "2026-11-04 05:00:00",
+     "2026-10-13 04:00:00",
+     "2026-10-27 04:00:00",
+     "2026-10-27 04:00:00",
+     "2026-10-27 04:00:00",
+     "2026-11-20 05:00:00",
+     "2026-11-13 05:00:00",
+     "2026-10-19 04:00:00",
+     "2026-11-10 05:00:00",
+     "2026-11-17 05:00:00",
+     "2026-11-17 05:00:00",
+     "2026-11-17 05:00:00"
+    ]
+   },
+   "address": "1219 Oak Knoll Warren OH 44484",
+   "activity": "Demolition and Abatement"
+  },
+  {
+   "id": 236952,
+   "row_positions": [
+    76,
+    77,
+    78
+   ],
+   "differs": {
+    "BUILDING NAME": [
+     "137 E. Central Ave.",
+     "131 E. Central Ave.",
+     "135 E. Central Ave."
+    ],
+    "Building Address": [
+     "137 E. Central Ave. Van Wert OH 45891",
+     "131 E. Central Ave. Van Wert OH 45891",
+     "135 E. Central Ave. Van Wert OH 45891"
+    ],
+    "On Site Activity": [
+     "Demolition and Abatement",
+     "Demolition ONLY",
+     "Demolition ONLY"
+    ],
+    "NF Cat-2 Surface Area\n(sq ft)": [
+     "40",
+     "0",
+     "0"
+    ],
+    "On Site Specialist Name": [
+     "Alfred Wozniak III",
+     "N/A",
+     "N/A"
+    ],
+    "Specialist Cert Number": [
+     "AS543109",
+     "None",
+     "None"
+    ],
+    "Cert Expiration Date": [
+     "2027-09-13 00:00:00",
+     "None",
+     "None"
+    ],
+    "SETUP DATE": [
+     "2026-11-30 05:00:00",
+     "None",
+     "None"
+    ],
+    "ABATEMENT DATE": [
+     "2026-11-30 05:00:00",
+     "None",
+     "None"
+    ],
+    "COMPLETION DATE": [
+     "2026-11-30 05:00:00",
+     "None",
+     "None"
+    ],
+    "Demo Start Date": [
+     "2026-12-01 05:00:00",
+     "2026-11-30 05:00:00",
+     "2026-11-30 05:00:00"
+    ]
+   },
+   "address": "137 E. Central Ave. Van Wert OH 45891",
+   "activity": "Demolition and Abatement"
+  },
+  {
+   "id": 236482,
+   "row_positions": [
+    79,
+    80,
+    81
+   ],
+   "differs": {
+    "Building Address": [
+     "2962 East 67 Street Cleveland OH 44127",
+     "10301 Reno Avenue Cleveland OH 44105",
+     "9920 Cumberland Avenue-front Cleveland OH 44104"
+    ],
+    "RACM Surface Area\n(sq ft)": [
+     "20",
+     "2847",
+     "12"
+    ],
+    "ONSITE OFF HOLD DATE": [
+     "2026-11-17 05:00:00",
+     "2026-11-18 05:00:00",
+     "2026-11-16 05:00:00"
+    ],
+    "Demo Contractor Name": [
+     "XL EXCAVATING, INC",
+     "T&T Demolition and Recycling, LLC",
+     "Great Lakes Deconstruction"
+    ],
+    "Demo Contractor Phone": [
+     "216-906-3900",
+     "440-522-7222",
+     "216-255-0413"
+    ],
+    "Demo Start Date": [
+     "2026-10-28 04:00:00",
+     "2026-11-16 05:00:00",
+     "2026-10-28 04:00:00"
+    ],
+    "Demo Off Hold Date": [
+     "2026-10-28 04:00:00",
+     "2026-11-16 05:00:00",
+     "2026-10-28 04:00:00"
+    ]
+   },
+   "address": "2962 East 67 Street Cleveland OH 44127",
+   "activity": "Demolition and Abatement"
+  },
+  {
+   "id": 236033,
+   "row_positions": [
+    84,
+    85,
+    86
+   ],
+   "differs": {
+    "On Site Specialist Name": [
+     "Randale Brown",
+     "Daniel Carter",
+     "Eric Kovacs"
+    ],
+    "Specialist Cert Number": [
+     "AS32819",
+     "AS33325",
+     "AS552584"
+    ],
+    "Cert Expiration Date": [
+     "2027-06-26 00:00:00",
+     "2027-01-26 00:00:00",
+     "2027-03-16 00:00:00"
+    ]
+   },
+   "address": "2270 Professor Avenue Cleveland OH 44113",
+   "activity": "Abatement ONLY"
+  },
+  {
+   "id": 234009,
+   "row_positions": [
+    87,
+    88
+   ],
+   "differs": {
+    "On Site Specialist Name": [
+     "Eric Kovacs",
+     "Daniel Carter"
+    ],
+    "Specialist Cert Number": [
+     "AS552584",
+     "AS33325"
+    ],
+    "Cert Expiration Date": [
+     "2027-03-16 00:00:00",
+     "2027-01-26 00:00:00"
+    ]
+   },
+   "address": "9200 Biddulph Road Brooklyn OH 44144",
+   "activity": "Abatement ONLY"
+  }
+ ],
+ "id_order": {
+  "first_ids": [
+   236964,
+   236963,
+   236951,
+   236444,
+   235935,
+   235935,
+   236496,
+   236850
+  ],
+  "descending_share": 0.7587414961367679
+ },
+ "today": "2026-11-16",
+ "date_times_of_day": [
+  [
+   "04:00",
+   146590
+  ],
+  [
+   "05:00",
+   70615
+  ],
+  [
+   "00:00",
+   23840
+  ],
+  [
+   "06:00",
+   386
+  ],
+  [
+   "08:00",
+   347
+  ],
+  [
+   "07:00",
+   312
+  ],
+  [
+   "10:00",
+   62
+  ],
+  [
+   "03:00",
+   10
+  ]
+ ],
+ "building_name_words": [
+  [
+   "MAINTENANCE",
+   76
+  ],
+  [
+   "MULTIPLE",
+   24
+  ],
+  [
+   "VARIOUS",
+   21
+  ],
+  [
+   "ANNUAL",
+   2
+  ],
+  [
+   "SCATTERED",
+   1
+  ]
+ ],
+ "owner_words": [
+  [
+   "LAND REUTIL",
+   13454
+  ],
+  [
+   "REUTILIZATION",
+   12481
+  ],
+  [
+   "LAND BANK",
+   6293
+  ],
+  [
+   "LANDBANK",
+   198
+  ]
+ ],
+ "current": {
+  "rows": 1536,
+  "ids": 997,
+  "stats": {
+   "abate_longer_than_300_days": 234,
+   "demo_longer_than_300_days": 119,
+   "demo_no_end": 15,
+   "demo_started_no_end": 15,
+   "abate_no_end": 10,
+   "abate_started_no_end": 10
+  },
+  "activity": [
+   [
+    "Demolition ONLY",
+    604
+   ],
+   [
+    "Abatement ONLY",
+    495
+   ],
+   [
+    "Demolition and Abatement",
+    436
+   ],
+   [
+    "Contact Ohio EPA for Details",
+    1
+   ]
+  ]
+ },
+ "long_examples": [
+  [
+   202503,
+   "Toledo Museum of Art",
+   "Toledo Museum of Art",
+   "2023-03-06",
+   "2027-08-31"
+  ],
+  [
+   233431,
+   "Cleveland Clinic Foundation",
+   "Cleveland Clinic Fairview Hospital",
+   "2026-02-03",
+   "2027-05-31"
+  ],
+  [
+   235445,
+   "CHN Housing Partners",
+   "North View Manor Apartments",
+   "2026-07-27",
+   "2027-05-31"
+  ],
+  [
+   235445,
+   "CHN Housing Partners",
+   "North View Manor Apartments",
+   "2026-07-27",
+   "2027-05-31"
+  ],
+  [
+   233086,
+   "Canton Business Park II LLC",
+   "Daimler Truck",
+   "2025-12-23",
+   "2026-12-31"
+  ],
+  [
+   233086,
+   "Canton Business Park II LLC",
+   "Daimler Truck",
+   "2025-12-23",
+   "2026-12-31"
+  ],
+  [
+   233086,
+   "Canton Business Park II LLC",
+   "Daimler Truck",
+   "2025-12-23",
+   "2026-12-31"
+  ],
+  [
+   233086,
+   "Canton Business Park II LLC",
+   "Daimler Truck",
+   "2025-12-23",
+   "2026-12-31"
+  ],
+  [
+   236933,
+   "City of Akron",
+   "Former Firestone HQ",
+   "2026-11-25",
+   "2027-12-31"
+  ],
+  [
+   235234,
+   "MetroHealth Systems",
+   "MetroHealth Medical Center",
+   "2026-07-07",
+   "2027-05-31"
+  ]
+ ],
+ "census_seconds": 28,
+ "geocode": {
+  "addresses": 1361,
+  "match_types": [
+   [
+    "Match/Exact",
+    874
+   ],
+   [
+    "Match/Non_Exact",
+    277
+   ],
+   [
+    "No_Match/",
+    188
+   ],
+   [
+    "Tie/",
+    22
+   ]
+  ],
+  "agreement": {
+   "no_match_zip_single_county": 114,
+   "no_match_zip_99pct": 20,
+   "no_match_zip_split": 65,
+   "no_match_no_valid_zip": 11,
+   "census_in_zip_counties": 1139,
+   "census_not_in_zip_counties_Non_Exact": 5,
+   "census_only_zip_invalid": 7
+  },
+  "conflicts": [
+   [
+    "12900 Snow Road Parma OH 44310",
+    "39035",
+    "12900 SNOW RD, PARMA, OH, 44130",
+    [
+     "39153"
+    ]
+   ],
+   [
+    "260 E Maion St ney OH 45349",
+    "39039",
+    "260 E MAIN ST, NEY, OH, 43549",
+    [
+     "39023"
+    ]
+   ],
+   [
+    "4100 W Third St Dayton OH 45248",
+    "39113",
+    "4100 W 3RD ST, DAYTON, OH, 45417",
+    [
+     "39061"
+    ]
+   ],
+   [
+    "532 Lloyd Rd Euclid OH 44092",
+    "39035",
+    "532 LLOYD RD, EUCLID, OH, 44132",
+    [
+     "39085"
+    ]
+   ],
+   [
+    "8009 Eckmansville Road winchester OH 45897",
+    "39001",
+    "8009 ECKMANSVILLE RD, WINCHESTER, OH, 45697",
+    [
+     "39063"
+    ]
+   ]
+  ],
+  "unmatched_examples": [
+   "0 Andover OH 44003",
+   "0 Byxbe Parkway Delaware OH 43015",
+   "0 E. High St. Mendon OH 45862",
+   "0 Hartsook Rd Vinton OH 45686",
+   "0 High St Mendon OH 45862",
+   "0 State Route 155 Hemlock OH 48626",
+   "0.92 Mi N Of SR245 Marysville OH 43040",
+   "1 Akron General Avenue Akron OH 44137",
+   "1 Paycor Stadium Cincinnati OH 45202",
+   "1 Perkins Square Akron OH 44308",
+   "1 Riverside Plaza Columbus OH 43215",
+   "1.70 Mi East of Jct SR237 Coordinates: 41.69331, -81.790108 Lakewood OH 44107",
+   "10 Imperial Street New Lexington OH 43764",
+   "1002 Gilbert Ave Cincinnati OH 45202",
+   "105 Jefferson St Mendon OH 45862",
+   "105 Jefferson St. Mendon OH 45862",
+   "1100 Squires Aurora OH 44202",
+   "11158 OH-38 Milford Center OH 43045",
+   "11339 Rd. 171 Paulding OH 45879",
+   "1164-1188 Hill Road N Pickerington OH 43147",
+   "117 3rd St. Ansonia OH 45303",
+   "11858 US 62 Winchester OH 45697",
+   "12016 Nelson Parkman Road Ravenna OH 44266",
+   "121 S. Lake St. Gypsum OH 43433",
+   "12138 Jug St. Johnstown OH 43031"
+  ]
+ },
+ "zcta_ohio": {
+  "zips": 1233,
+  "counties_per_zip": [
+   [
+    1,
+    769
+   ],
+   [
+    2,
+    325
+   ],
+   [
+    3,
+    123
+   ],
+   [
+    4,
+    16
+   ]
+  ]
+ }
+}
