@@ -4,10 +4,10 @@
   "County not confirmed": 98,
   "ZIP in one county": 125
  },
- "built": "2026-11-17T01:24:05+00:00",
+ "built": "2026-11-17T01:39:57+00:00",
  "confirmed": 1420,
  "epa_as_of": "11/13/2026 9:00:05 PM",
- "epa_posted": "Mon, 16 Nov 2026 15:38:24 GMT",
+ "epa_posted": "Tue, 17 Nov 2026 01:38:25 GMT",
  "epa_rows": 73225,
  "epa_sha256": "169e49bc7dc721c3254adcee83bd1a6bb3a394e10fda484e6201a87ecd0b9788",
  "local_counties": {
@@ -144,9 +144,6 @@
   ],
   "935": [
    "TRUMBULL"
-  ],
-  "BELMONT": [
-   "BELMONT"
   ]
  },
  "local_labels": {
@@ -171,8 +168,7 @@
   "83": "Local 83",
   "860": "Local 860",
   "894": "Local 894",
-  "935": "Local 935",
-  "BELMONT": "Belmont County (WV local)"
+  "935": "Local 935"
  },
  "locals": {
   "1015": {
@@ -350,14 +346,6 @@
    "demo_upcoming": 18,
    "not_confirmed": 5,
    "sites": 80
-  },
-  "BELMONT": {
-   "abate_underway": 1,
-   "abate_upcoming": 0,
-   "demo_underway": 4,
-   "demo_upcoming": 0,
-   "not_confirmed": 1,
-   "sites": 4
   }
  },
  "no_details": 2,

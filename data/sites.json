@@ -1809,9 +1809,7 @@
 "demo_start": "2025-07-23",
 "demo_status": "Underway",
 "id": "231215",
-"locals": [
-"BELMONT"
-],
+"locals": [],
 "nf_rm_c1_pipe": "0",
 "nf_rm_c1_surface": "0",
 "nf_rm_c2_pipe": "0",
@@ -1858,9 +1856,7 @@
 "demo_start": "2026-06-29",
 "demo_status": "Underway",
 "id": "235153",
-"locals": [
-"BELMONT"
-],
+"locals": [],
 "nf_rm_c1_pipe": "0",
 "nf_rm_c1_surface": "0",
 "nf_rm_c2_pipe": "0",
@@ -1907,9 +1903,7 @@
 "demo_start": "2026-10-08",
 "demo_status": "Underway",
 "id": "236283",
-"locals": [
-"BELMONT"
-],
+"locals": [],
 "nf_rm_c1_pipe": "0",
 "nf_rm_c1_surface": "0",
 "nf_rm_c2_pipe": "0",
@@ -74214,8 +74208,7 @@
 "demo_status": "Underway",
 "id": "236518",
 "locals": [
-"809",
-"BELMONT"
+"809"
 ],
 "nf_rm_c1_pipe": "0",
 "nf_rm_c1_surface": "0",
