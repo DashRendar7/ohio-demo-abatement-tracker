@@ -1,0 +1,445 @@
+{
+ "basis": {
+  "Census address match": 1290,
+  "County not confirmed": 100,
+  "ZIP 43023 lies entirely in this county": 1,
+  "ZIP 43210 lies entirely in this county": 2,
+  "ZIP 43211 lies entirely in this county": 1,
+  "ZIP 43215 lies entirely in this county": 2,
+  "ZIP 43217 lies entirely in this county": 1,
+  "ZIP 43229 lies entirely in this county": 3,
+  "ZIP 43433 lies entirely in this county": 1,
+  "ZIP 43458 lies entirely in this county": 1,
+  "ZIP 43560 lies entirely in this county": 1,
+  "ZIP 43607 lies entirely in this county": 1,
+  "ZIP 43718 lies entirely in this county": 1,
+  "ZIP 43730 lies entirely in this county": 1,
+  "ZIP 43748 lies entirely in this county": 1,
+  "ZIP 43758 lies entirely in this county": 1,
+  "ZIP 43764 lies entirely in this county": 1,
+  "ZIP 43920 lies entirely in this county": 2,
+  "ZIP 43961 lies entirely in this county": 1,
+  "ZIP 44001 lies entirely in this county": 1,
+  "ZIP 44003 lies entirely in this county": 1,
+  "ZIP 44010 lies entirely in this county": 1,
+  "ZIP 44011 lies entirely in this county": 2,
+  "ZIP 44012 lies entirely in this county": 2,
+  "ZIP 44023 lies entirely in this county": 1,
+  "ZIP 44035 lies entirely in this county": 1,
+  "ZIP 44106 lies entirely in this county": 5,
+  "ZIP 44107 lies entirely in this county": 1,
+  "ZIP 44111 lies entirely in this county": 1,
+  "ZIP 44112 lies entirely in this county": 1,
+  "ZIP 44115 lies entirely in this county": 5,
+  "ZIP 44116 lies entirely in this county": 1,
+  "ZIP 44118 lies entirely in this county": 3,
+  "ZIP 44121 lies entirely in this county": 2,
+  "ZIP 44122 lies entirely in this county": 2,
+  "ZIP 44124 lies entirely in this county": 1,
+  "ZIP 44130 lies entirely in this county": 1,
+  "ZIP 44131 lies entirely in this county": 1,
+  "ZIP 44135 lies entirely in this county": 7,
+  "ZIP 44137 lies entirely in this county": 2,
+  "ZIP 44139 lies entirely in this county": 4,
+  "ZIP 44140 lies entirely in this county": 1,
+  "ZIP 44143 lies entirely in this county": 1,
+  "ZIP 44146 lies entirely in this county": 1,
+  "ZIP 44266 lies entirely in this county": 1,
+  "ZIP 44301 lies entirely in this county": 2,
+  "ZIP 44304 lies entirely in this county": 1,
+  "ZIP 44308 lies entirely in this county": 3,
+  "ZIP 44401 lies entirely in this county": 1,
+  "ZIP 44483 lies entirely in this county": 4,
+  "ZIP 44485 lies entirely in this county": 1,
+  "ZIP 44502 lies entirely in this county": 1,
+  "ZIP 44606 lies entirely in this county": 1,
+  "ZIP 44702 lies entirely in this county": 1,
+  "ZIP 44901 lies entirely in this county": 1,
+  "ZIP 44906 lies entirely in this county": 1,
+  "ZIP 45011 lies entirely in this county": 2,
+  "ZIP 45040 lies entirely in this county": 1,
+  "ZIP 45177 lies entirely in this county": 1,
+  "ZIP 45202 lies entirely in this county": 2,
+  "ZIP 45207 lies entirely in this county": 1,
+  "ZIP 45217 lies entirely in this county": 1,
+  "ZIP 45220 lies entirely in this county": 6,
+  "ZIP 45227 lies entirely in this county": 1,
+  "ZIP 45237 lies entirely in this county": 1,
+  "ZIP 45303 lies entirely in this county": 1,
+  "ZIP 45315 lies entirely in this county": 1,
+  "ZIP 45403 lies entirely in this county": 2,
+  "ZIP 45433 lies entirely in this county": 5,
+  "ZIP 45504 lies entirely in this county": 1,
+  "ZIP 45631 lies entirely in this county": 2,
+  "ZIP 45640 lies entirely in this county": 3,
+  "ZIP 45663 lies entirely in this county": 1,
+  "ZIP 45714 lies entirely in this county": 1,
+  "ZIP 45773 lies entirely in this county": 1,
+  "ZIP 45804 lies entirely in this county": 1,
+  "ZIP 45822 lies entirely in this county": 1,
+  "ZIP 45860 lies entirely in this county": 1,
+  "ZIP 45879 lies entirely in this county": 2
+ },
+ "built": "2026-11-17T01:20:07+00:00",
+ "confirmed": 1418,
+ "epa_as_of": "11/13/2026 9:00:05 PM",
+ "epa_posted": "Mon, 16 Nov 2026 15:38:24 GMT",
+ "epa_rows": 73225,
+ "epa_sha256": "169e49bc7dc721c3254adcee83bd1a6bb3a394e10fda484e6201a87ecd0b9788",
+ "local_counties": {
+  "1015": [
+   "CARROLL",
+   "STARK",
+   "WAYNE"
+  ],
+  "1216": [
+   "ASHLAND",
+   "CRAWFORD",
+   "KNOX",
+   "MORROW",
+   "RICHLAND"
+  ],
+  "125": [
+   "MAHONING"
+  ],
+  "134": [
+   "COSHOCTON",
+   "HOLMES",
+   "TUSCARAWAS"
+  ],
+  "1410": [
+   "CHAMPAIGN",
+   "CLARK",
+   "DARKE",
+   "GREENE",
+   "LOGAN",
+   "MIAMI",
+   "MONTGOMERY",
+   "PREBLE"
+  ],
+  "245": [
+   "ASHTABULA"
+  ],
+  "265": [
+   "BROWN",
+   "CLERMONT",
+   "CLINTON",
+   "HAMILTON"
+  ],
+  "310": [
+   "CUYAHOGA",
+   "GEAUGA",
+   "LAKE"
+  ],
+  "329": [
+   "ALLEN",
+   "AUGLAIZE",
+   "MERCER",
+   "PAULDING",
+   "PUTNAM",
+   "SHELBY",
+   "VAN WERT"
+  ],
+  "423": [
+   "FAIRFIELD",
+   "FAYETTE",
+   "FRANKLIN",
+   "HOCKING",
+   "LICKING",
+   "MADISON",
+   "PICKAWAY",
+   "UNION"
+  ],
+  "480": [
+   "ERIE",
+   "HURON",
+   "OTTAWA",
+   "SANDUSKY"
+  ],
+  "500": [
+   "DEFIANCE",
+   "FULTON",
+   "HENRY",
+   "LUCAS",
+   "WILLIAMS",
+   "WOOD"
+  ],
+  "530": [
+   "GUERNSEY",
+   "MUSKINGUM",
+   "NOBLE",
+   "PERRY"
+  ],
+  "534": [
+   "BUTLER",
+   "WARREN"
+  ],
+  "574": [
+   "DELAWARE",
+   "HANCOCK",
+   "HARDIN",
+   "MARION",
+   "SENECA",
+   "WYANDOT"
+  ],
+  "639": [
+   "MONROE",
+   "MORGAN",
+   "WASHINGTON"
+  ],
+  "758": [
+   "LORAIN"
+  ],
+  "809": [
+   "COLUMBIANA",
+   "HARRISON",
+   "JEFFERSON"
+  ],
+  "83": [
+   "ADAMS",
+   "ATHENS",
+   "GALLIA",
+   "HIGHLAND",
+   "JACKSON",
+   "LAWRENCE",
+   "MEIGS",
+   "PIKE",
+   "ROSS",
+   "SCIOTO",
+   "VINTON"
+  ],
+  "860": [
+   "CUYAHOGA",
+   "GEAUGA",
+   "LAKE"
+  ],
+  "894": [
+   "MEDINA",
+   "PORTAGE",
+   "SUMMIT"
+  ],
+  "935": [
+   "TRUMBULL"
+  ],
+  "BELMONT": [
+   "BELMONT"
+  ]
+ },
+ "local_labels": {
+  "1015": "Local 1015",
+  "1216": "Local 1216",
+  "125": "Local 125",
+  "134": "Local 134",
+  "1410": "Local 1410",
+  "245": "Local 245",
+  "265": "Local 265",
+  "310": "Local 310",
+  "329": "Local 329",
+  "423": "Local 423",
+  "480": "Local 480",
+  "500": "Local 500",
+  "530": "Local 530",
+  "534": "Local 534",
+  "574": "Local 574",
+  "639": "Local 639",
+  "758": "Local 758",
+  "809": "Local 809",
+  "83": "Local 83",
+  "860": "Local 860",
+  "894": "Local 894",
+  "935": "Local 935",
+  "BELMONT": "Belmont County (WV local)"
+ },
+ "locals": {
+  "1015": {
+   "abate_underway": 50,
+   "abate_upcoming": 6,
+   "demo_underway": 26,
+   "demo_upcoming": 6,
+   "not_confirmed": 4,
+   "sites": 82
+  },
+  "1216": {
+   "abate_underway": 10,
+   "abate_upcoming": 1,
+   "demo_underway": 27,
+   "demo_upcoming": 4,
+   "not_confirmed": 8,
+   "sites": 39
+  },
+  "125": {
+   "abate_underway": 8,
+   "abate_upcoming": 3,
+   "demo_underway": 22,
+   "demo_upcoming": 6,
+   "not_confirmed": 6,
+   "sites": 33
+  },
+  "134": {
+   "abate_underway": 2,
+   "abate_upcoming": 2,
+   "demo_underway": 2,
+   "demo_upcoming": 7,
+   "not_confirmed": 3,
+   "sites": 13
+  },
+  "1410": {
+   "abate_underway": 38,
+   "abate_upcoming": 16,
+   "demo_underway": 61,
+   "demo_upcoming": 37,
+   "not_confirmed": 7,
+   "sites": 118
+  },
+  "245": {
+   "abate_underway": 4,
+   "abate_upcoming": 3,
+   "demo_underway": 5,
+   "demo_upcoming": 5,
+   "not_confirmed": 0,
+   "sites": 11
+  },
+  "265": {
+   "abate_underway": 34,
+   "abate_upcoming": 11,
+   "demo_underway": 67,
+   "demo_upcoming": 17,
+   "not_confirmed": 10,
+   "sites": 115
+  },
+  "310": {
+   "abate_underway": 211,
+   "abate_upcoming": 38,
+   "demo_underway": 158,
+   "demo_upcoming": 39,
+   "not_confirmed": 1,
+   "sites": 381
+  },
+  "329": {
+   "abate_underway": 7,
+   "abate_upcoming": 8,
+   "demo_underway": 40,
+   "demo_upcoming": 8,
+   "not_confirmed": 16,
+   "sites": 58
+  },
+  "423": {
+   "abate_underway": 63,
+   "abate_upcoming": 9,
+   "demo_underway": 121,
+   "demo_upcoming": 17,
+   "not_confirmed": 20,
+   "sites": 195
+  },
+  "480": {
+   "abate_underway": 3,
+   "abate_upcoming": 1,
+   "demo_underway": 22,
+   "demo_upcoming": 2,
+   "not_confirmed": 2,
+   "sites": 27
+  },
+  "500": {
+   "abate_underway": 16,
+   "abate_upcoming": 5,
+   "demo_underway": 48,
+   "demo_upcoming": 8,
+   "not_confirmed": 8,
+   "sites": 73
+  },
+  "530": {
+   "abate_underway": 9,
+   "abate_upcoming": 2,
+   "demo_underway": 23,
+   "demo_upcoming": 14,
+   "not_confirmed": 8,
+   "sites": 46
+  },
+  "534": {
+   "abate_underway": 9,
+   "abate_upcoming": 2,
+   "demo_underway": 16,
+   "demo_upcoming": 2,
+   "not_confirmed": 4,
+   "sites": 27
+  },
+  "574": {
+   "abate_underway": 3,
+   "abate_upcoming": 2,
+   "demo_underway": 25,
+   "demo_upcoming": 4,
+   "not_confirmed": 18,
+   "sites": 30
+  },
+  "639": {
+   "abate_underway": 3,
+   "abate_upcoming": 0,
+   "demo_underway": 6,
+   "demo_upcoming": 0,
+   "not_confirmed": 1,
+   "sites": 9
+  },
+  "758": {
+   "abate_underway": 20,
+   "abate_upcoming": 2,
+   "demo_underway": 13,
+   "demo_upcoming": 2,
+   "not_confirmed": 0,
+   "sites": 31
+  },
+  "809": {
+   "abate_underway": 7,
+   "abate_upcoming": 1,
+   "demo_underway": 26,
+   "demo_upcoming": 3,
+   "not_confirmed": 1,
+   "sites": 32
+  },
+  "83": {
+   "abate_underway": 10,
+   "abate_upcoming": 2,
+   "demo_underway": 41,
+   "demo_upcoming": 5,
+   "not_confirmed": 12,
+   "sites": 55
+  },
+  "860": {
+   "abate_underway": 211,
+   "abate_upcoming": 38,
+   "demo_underway": 158,
+   "demo_upcoming": 39,
+   "not_confirmed": 1,
+   "sites": 381
+  },
+  "894": {
+   "abate_underway": 48,
+   "abate_upcoming": 16,
+   "demo_underway": 30,
+   "demo_upcoming": 22,
+   "not_confirmed": 9,
+   "sites": 104
+  },
+  "935": {
+   "abate_underway": 13,
+   "abate_upcoming": 7,
+   "demo_underway": 58,
+   "demo_upcoming": 18,
+   "not_confirmed": 6,
+   "sites": 80
+  },
+  "BELMONT": {
+   "abate_underway": 1,
+   "abate_upcoming": 0,
+   "demo_underway": 4,
+   "demo_upcoming": 0,
+   "not_confirmed": 1,
+   "sites": 4
+  }
+ },
+ "no_details": 2,
+ "not_confirmed": 100,
+ "notifications": 999,
+ "review": 105,
+ "sites": 1518,
+ "today": "2026-11-16"
+}
