@@ -1,15 +1,18 @@
 {
  "basis": {
   "Census address match": 1295,
-  "County not confirmed": 98,
-  "ZIP in one county": 125
+  "County not confirmed": 15,
+  "Likely county": 77,
+  "ODOT county code": 14,
+  "ZIP in one county": 117
  },
- "built": "2026-11-17T01:39:57+00:00",
- "confirmed": 1420,
+ "built": "2026-11-17T01:57:37+00:00",
+ "confirmed": 1426,
  "epa_as_of": "11/13/2026 9:00:05 PM",
  "epa_posted": "Tue, 17 Nov 2026 01:38:25 GMT",
  "epa_rows": 73225,
  "epa_sha256": "169e49bc7dc721c3254adcee83bd1a6bb3a394e10fda484e6201a87ecd0b9788",
+ "likely": 77,
  "local_counties": {
   "1015": [
    "CARROLL",
@@ -172,130 +175,162 @@
  },
  "locals": {
   "1015": {
-   "abate_underway": 50,
+   "abate_underway": 49,
    "abate_upcoming": 6,
-   "demo_underway": 26,
+   "demo_underway": 25,
    "demo_upcoming": 6,
-   "not_confirmed": 4,
-   "sites": 82
+   "likely": 2,
+   "maybe": 2,
+   "not_confirmed": 2,
+   "sites": 80
   },
   "1216": {
-   "abate_underway": 10,
+   "abate_underway": 8,
    "abate_upcoming": 1,
-   "demo_underway": 27,
+   "demo_underway": 25,
    "demo_upcoming": 4,
-   "not_confirmed": 8,
-   "sites": 39
+   "likely": 4,
+   "maybe": 3,
+   "not_confirmed": 4,
+   "sites": 35
   },
   "125": {
    "abate_underway": 7,
-   "abate_upcoming": 3,
-   "demo_underway": 22,
-   "demo_upcoming": 6,
-   "not_confirmed": 5,
-   "sites": 32
+   "abate_upcoming": 2,
+   "demo_underway": 19,
+   "demo_upcoming": 5,
+   "likely": 0,
+   "maybe": 4,
+   "not_confirmed": 0,
+   "sites": 28
   },
   "134": {
    "abate_underway": 2,
    "abate_upcoming": 2,
    "demo_underway": 2,
-   "demo_upcoming": 7,
-   "not_confirmed": 3,
-   "sites": 13
+   "demo_upcoming": 6,
+   "likely": 2,
+   "maybe": 1,
+   "not_confirmed": 2,
+   "sites": 12
   },
   "1410": {
-   "abate_underway": 38,
+   "abate_underway": 37,
    "abate_upcoming": 16,
-   "demo_underway": 61,
+   "demo_underway": 57,
    "demo_upcoming": 37,
-   "not_confirmed": 7,
-   "sites": 118
+   "likely": 3,
+   "maybe": 4,
+   "not_confirmed": 3,
+   "sites": 114
   },
   "245": {
    "abate_underway": 4,
    "abate_upcoming": 3,
    "demo_underway": 5,
    "demo_upcoming": 5,
+   "likely": 0,
+   "maybe": 0,
    "not_confirmed": 0,
    "sites": 11
   },
   "265": {
-   "abate_underway": 34,
+   "abate_underway": 36,
    "abate_upcoming": 11,
-   "demo_underway": 67,
+   "demo_underway": 60,
    "demo_upcoming": 17,
-   "not_confirmed": 10,
-   "sites": 115
+   "likely": 5,
+   "maybe": 7,
+   "not_confirmed": 5,
+   "sites": 110
   },
   "310": {
    "abate_underway": 211,
    "abate_upcoming": 38,
-   "demo_underway": 158,
+   "demo_underway": 157,
    "demo_upcoming": 39,
-   "not_confirmed": 1,
-   "sites": 381
+   "likely": 0,
+   "maybe": 1,
+   "not_confirmed": 0,
+   "sites": 380
   },
   "329": {
    "abate_underway": 7,
-   "abate_upcoming": 8,
-   "demo_underway": 40,
+   "abate_upcoming": 7,
+   "demo_underway": 39,
    "demo_upcoming": 8,
-   "not_confirmed": 16,
-   "sites": 58
+   "likely": 14,
+   "maybe": 5,
+   "not_confirmed": 14,
+   "sites": 56
   },
   "423": {
-   "abate_underway": 63,
-   "abate_upcoming": 9,
-   "demo_underway": 121,
-   "demo_upcoming": 17,
-   "not_confirmed": 20,
-   "sites": 195
+   "abate_underway": 62,
+   "abate_upcoming": 8,
+   "demo_underway": 122,
+   "demo_upcoming": 15,
+   "likely": 15,
+   "maybe": 4,
+   "not_confirmed": 18,
+   "sites": 193
   },
   "480": {
    "abate_underway": 3,
    "abate_upcoming": 1,
-   "demo_underway": 22,
+   "demo_underway": 21,
    "demo_upcoming": 2,
-   "not_confirmed": 2,
-   "sites": 27
+   "likely": 1,
+   "maybe": 1,
+   "not_confirmed": 1,
+   "sites": 26
   },
   "500": {
    "abate_underway": 16,
    "abate_upcoming": 5,
-   "demo_underway": 48,
+   "demo_underway": 47,
    "demo_upcoming": 8,
-   "not_confirmed": 8,
-   "sites": 73
+   "likely": 6,
+   "maybe": 1,
+   "not_confirmed": 6,
+   "sites": 72
   },
   "530": {
-   "abate_underway": 9,
-   "abate_upcoming": 2,
-   "demo_underway": 22,
-   "demo_upcoming": 14,
-   "not_confirmed": 7,
-   "sites": 45
+   "abate_underway": 8,
+   "abate_upcoming": 1,
+   "demo_underway": 23,
+   "demo_upcoming": 12,
+   "likely": 3,
+   "maybe": 4,
+   "not_confirmed": 4,
+   "sites": 42
   },
   "534": {
    "abate_underway": 9,
    "abate_upcoming": 2,
-   "demo_underway": 16,
+   "demo_underway": 14,
    "demo_upcoming": 2,
-   "not_confirmed": 4,
-   "sites": 27
+   "likely": 2,
+   "maybe": 2,
+   "not_confirmed": 2,
+   "sites": 25
   },
   "574": {
-   "abate_underway": 3,
+   "abate_underway": 4,
    "abate_upcoming": 2,
-   "demo_underway": 25,
-   "demo_upcoming": 4,
-   "not_confirmed": 18,
-   "sites": 30
+   "demo_underway": 11,
+   "demo_upcoming": 3,
+   "likely": 3,
+   "maybe": 15,
+   "not_confirmed": 3,
+   "sites": 16
   },
   "639": {
    "abate_underway": 3,
    "abate_upcoming": 0,
    "demo_underway": 6,
    "demo_upcoming": 0,
+   "likely": 0,
+   "maybe": 0,
    "not_confirmed": 0,
    "sites": 9
   },
@@ -304,6 +339,8 @@
    "abate_upcoming": 2,
    "demo_underway": 13,
    "demo_upcoming": 2,
+   "likely": 0,
+   "maybe": 0,
    "not_confirmed": 0,
    "sites": 31
   },
@@ -312,6 +349,8 @@
    "abate_upcoming": 1,
    "demo_underway": 26,
    "demo_upcoming": 3,
+   "likely": 1,
+   "maybe": 0,
    "not_confirmed": 1,
    "sites": 32
   },
@@ -320,38 +359,47 @@
    "abate_upcoming": 2,
    "demo_underway": 41,
    "demo_upcoming": 5,
-   "not_confirmed": 12,
+   "likely": 8,
+   "maybe": 0,
+   "not_confirmed": 10,
    "sites": 55
   },
   "860": {
    "abate_underway": 211,
    "abate_upcoming": 38,
-   "demo_underway": 158,
+   "demo_underway": 157,
    "demo_upcoming": 39,
-   "not_confirmed": 1,
-   "sites": 381
+   "likely": 0,
+   "maybe": 1,
+   "not_confirmed": 0,
+   "sites": 380
   },
   "894": {
-   "abate_underway": 48,
-   "abate_upcoming": 16,
-   "demo_underway": 30,
-   "demo_upcoming": 22,
-   "not_confirmed": 9,
-   "sites": 104
+   "abate_underway": 49,
+   "abate_upcoming": 15,
+   "demo_underway": 29,
+   "demo_upcoming": 21,
+   "likely": 6,
+   "maybe": 2,
+   "not_confirmed": 7,
+   "sites": 103
   },
   "935": {
    "abate_underway": 13,
    "abate_upcoming": 7,
-   "demo_underway": 58,
+   "demo_underway": 55,
    "demo_upcoming": 18,
-   "not_confirmed": 5,
-   "sites": 80
+   "likely": 2,
+   "maybe": 2,
+   "not_confirmed": 2,
+   "sites": 77
   }
  },
  "no_details": 2,
- "not_confirmed": 98,
+ "not_confirmed": 92,
+ "not_confirmed_no_local": 8,
  "notifications": 999,
- "review": 103,
+ "review": 97,
  "sites": 1518,
  "today": "2026-11-16"
 }
