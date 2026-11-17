@@ -556,27 +556,29 @@ def write_xlsx(path, title, sites, status, counties, maybe=None):
         sheets.append(('Might be in your area', sorted(maybe, key=lambda s: (min([d for d in (s['abate_start'], s['demo_start']) if d] or [datetime.date.max]), s['id'], s['address']))))
     ws = wb.add_worksheet('About')
     lines = [title, '',
-             'Sites in this file: %d upcoming or underway%s.' % (len(sites), (', plus %d that might be in this area' % len(maybe)) if maybe is not None else ''),
-             'By sheet: ' + '; '.join('%s %d' % (n, len(r)) for n, r in sheets) + '. A site with both abatement and demolition can appear on two sheets.', '',
-             'Source: Ohio EPA asbestos and demolition notification list (epa.ohio.gov), data current as of %s.' % status['epa_as_of'],
-             'Projects upcoming or underway as of %s (Ohio time).' % status['today'],
-             'Counties covered: %s.' % (', '.join(c.title() for c in counties) if counties else 'all of Ohio'),
+             'Asbestos removal (abatement) and demolition jobs in Ohio that are starting soon or going on now.',
+             'From the notices contractors must file with the Ohio EPA. EPA list as of %s; jobs counted as of %s.' % (status['epa_as_of'], status['today']),
+             'Counties: %s.' % (', '.join(c.title() for c in counties) if counties else 'all of Ohio'),
              '',
-             'Each row is one site. One notification can cover several sites (land banks often list many houses).',
-             'Upcoming: the phase starts after today. Underway: it started on or before today and its completion date is today or later.',
-             'A phase with a start date but no completion date counts as underway for %d days after it starts.' % RECENT_NO_END_DAYS,
-             'County: Census Bureau address match, or the ZIP code when the address could not be matched and the ZIP lies in one county.',
-             'Rows highlighted yellow could not be placed in a county for certain; "County check" says why.',
-             '"Likely <county>": every available clue (the town in the address, a county named by the owner, other sites on the same notice) points to that county.',
-             'A site counts for a Local when its county is confirmed or likely, or when every county it could be in belongs to that Local.',
-             'Sites that may be in this Local but could also be elsewhere are on the "Might be in your area" sheet. Check the address before acting on them.',
-             '',
-             'Columns: every column of the Ohio EPA list is included, with the same values. Dates are real dates (sortable and filterable).',
-             'The tracker adds: County, County check, Counted for Locals, Might also be in, Organizer alerts, and the Abatement and Demolition status and note columns.',
-             'Organizer alerts: land bank notices, maintenance or annual permits, and work scheduled to run more than a year.',
-             'Every value in these sheets is checked against a second, independent reading of the EPA list before the file is published.']
+             'THE SHEETS',
+             '"Upcoming": the work starts after today.',
+             '"Underway": the work has started and is not past its completion date. With no completion date, it counts as underway for %d days.' % RECENT_NO_END_DAYS]
+    if maybe is not None:
+        lines.append('"Might be in your area": the address could be in this Local or a neighboring one. Check it before acting.')
+    lines += ['Rows in this file: ' + '; '.join('%s %d' % (n, len(r)) for n, r in sheets) + '. A job with both abatement and demolition is on both sheets.',
+              '',
+              'TIPS',
+              'Each row is one address. One EPA notice can cover many addresses (land banks often list many houses).',
+              'Yellow rows: the county could not be confirmed from the address. The "County check" column says why.',
+              '"Organizer alerts" marks land bank notices, maintenance or annual permits, and work set to run more than a year.',
+              'Use the arrows in the top row to sort or filter. Dates and amounts sort correctly.',
+              '',
+              'WHERE THE DATA COMES FROM',
+              'Every column of the Ohio EPA list is included, unchanged. The tracker adds the County, County check, Counted for Locals, Might also be in, Organizer alerts, and Abatement and Demolition status columns.',
+              'County comes from the Census Bureau address lookup, or from the ZIP code when the whole ZIP is in one county. "Likely" means every other clue (town, owner, other addresses on the notice) points to that county.',
+              'Before a file is published, every value in it is checked against a second, separate reading of the EPA list.']
     for i, t in enumerate(lines):
-        ws.write(i, 0, t, bold if i == 0 else None)
+        ws.write(i, 0, t, bold if i == 0 or t in ('THE SHEETS', 'TIPS', 'WHERE THE DATA COMES FROM') else None)
     ws.set_column(0, 0, 120)
     for name, rows in sheets:
         ws = wb.add_worksheet(name)
