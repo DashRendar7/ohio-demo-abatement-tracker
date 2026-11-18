@@ -1,18 +1,18 @@
 {
  "basis": {
-  "Census address match": 1304,
+  "Census address match": 1315,
   "County not confirmed": 16,
-  "Likely county": 77,
+  "Likely county": 75,
   "ODOT county code": 14,
-  "ZIP in one county": 117
+  "ZIP in one county": 118
  },
- "built": "2026-11-18T01:44:44+00:00",
- "confirmed": 1435,
- "epa_as_of": "11/16/2026 9:00:07 PM",
- "epa_posted": "Wed, 18 Nov 2026 01:38:22 GMT",
- "epa_rows": 73248,
- "epa_sha256": "0b0686af9a96976ea95199488e1fffb341c7115b5dffab5e8b349d86aa3e9c47",
- "likely": 77,
+ "built": "2026-11-18T07:43:36+00:00",
+ "confirmed": 1447,
+ "epa_as_of": "11/17/2026 9:00:03 PM",
+ "epa_posted": "Wed, 18 Nov 2026 07:38:44 GMT",
+ "epa_rows": 73271,
+ "epa_sha256": "9225ad1c14a56a1a6179c8bf641af1a6a5b364f9663d6a76e60498b40f43acf4",
+ "likely": 75,
  "local_counties": {
   "1015": [
    "CARROLL",
@@ -176,8 +176,8 @@
  "locals": {
   "1015": {
    "abate_underway": 46,
-   "abate_upcoming": 7,
-   "demo_underway": 25,
+   "abate_upcoming": 6,
+   "demo_underway": 26,
    "demo_upcoming": 7,
    "likely": 2,
    "maybe": 2,
@@ -186,16 +186,16 @@
   },
   "1216": {
    "abate_underway": 9,
-   "abate_upcoming": 0,
+   "abate_upcoming": 1,
    "demo_underway": 24,
    "demo_upcoming": 4,
    "likely": 4,
    "maybe": 3,
    "not_confirmed": 4,
-   "sites": 34
+   "sites": 35
   },
   "125": {
-   "abate_underway": 6,
+   "abate_underway": 4,
    "abate_upcoming": 2,
    "demo_underway": 19,
    "demo_upcoming": 5,
@@ -208,21 +208,21 @@
    "abate_underway": 3,
    "abate_upcoming": 1,
    "demo_underway": 2,
-   "demo_upcoming": 6,
+   "demo_upcoming": 7,
    "likely": 2,
    "maybe": 1,
    "not_confirmed": 2,
-   "sites": 12
+   "sites": 13
   },
   "1410": {
-   "abate_underway": 37,
-   "abate_upcoming": 16,
-   "demo_underway": 64,
-   "demo_upcoming": 32,
+   "abate_underway": 40,
+   "abate_upcoming": 14,
+   "demo_underway": 70,
+   "demo_upcoming": 27,
    "likely": 3,
    "maybe": 4,
    "not_confirmed": 3,
-   "sites": 116
+   "sites": 117
   },
   "245": {
    "abate_underway": 4,
@@ -235,44 +235,44 @@
    "sites": 13
   },
   "265": {
-   "abate_underway": 36,
-   "abate_upcoming": 11,
-   "demo_underway": 60,
-   "demo_upcoming": 18,
+   "abate_underway": 37,
+   "abate_upcoming": 12,
+   "demo_underway": 66,
+   "demo_upcoming": 13,
    "likely": 6,
    "maybe": 6,
    "not_confirmed": 6,
-   "sites": 111
+   "sites": 114
   },
   "310": {
-   "abate_underway": 210,
-   "abate_upcoming": 35,
-   "demo_underway": 154,
-   "demo_upcoming": 39,
+   "abate_underway": 211,
+   "abate_upcoming": 33,
+   "demo_underway": 155,
+   "demo_upcoming": 41,
    "likely": 0,
    "maybe": 1,
    "not_confirmed": 0,
-   "sites": 376
+   "sites": 379
   },
   "329": {
-   "abate_underway": 7,
-   "abate_upcoming": 7,
-   "demo_underway": 40,
+   "abate_underway": 10,
+   "abate_upcoming": 5,
+   "demo_underway": 36,
    "demo_upcoming": 8,
-   "likely": 14,
+   "likely": 12,
    "maybe": 5,
-   "not_confirmed": 14,
-   "sites": 57
+   "not_confirmed": 12,
+   "sites": 54
   },
   "423": {
    "abate_underway": 66,
    "abate_upcoming": 6,
    "demo_underway": 122,
-   "demo_upcoming": 16,
+   "demo_upcoming": 15,
    "likely": 15,
    "maybe": 4,
    "not_confirmed": 18,
-   "sites": 196
+   "sites": 195
   },
   "480": {
    "abate_underway": 2,
@@ -285,14 +285,14 @@
    "sites": 25
   },
   "500": {
-   "abate_underway": 16,
-   "abate_upcoming": 5,
-   "demo_underway": 48,
-   "demo_upcoming": 7,
+   "abate_underway": 18,
+   "abate_upcoming": 4,
+   "demo_underway": 50,
+   "demo_upcoming": 6,
    "likely": 6,
    "maybe": 1,
    "not_confirmed": 6,
-   "sites": 72
+   "sites": 73
   },
   "530": {
    "abate_underway": 7,
@@ -347,59 +347,59 @@
   "809": {
    "abate_underway": 7,
    "abate_upcoming": 2,
-   "demo_underway": 26,
+   "demo_underway": 25,
    "demo_upcoming": 2,
    "likely": 1,
    "maybe": 0,
    "not_confirmed": 1,
-   "sites": 32
+   "sites": 31
   },
   "83": {
    "abate_underway": 11,
-   "abate_upcoming": 1,
-   "demo_underway": 40,
-   "demo_upcoming": 5,
+   "abate_upcoming": 2,
+   "demo_underway": 41,
+   "demo_upcoming": 7,
    "likely": 7,
    "maybe": 0,
    "not_confirmed": 10,
-   "sites": 54
+   "sites": 57
   },
   "860": {
-   "abate_underway": 210,
-   "abate_upcoming": 35,
-   "demo_underway": 154,
-   "demo_upcoming": 39,
+   "abate_underway": 211,
+   "abate_upcoming": 33,
+   "demo_underway": 155,
+   "demo_upcoming": 41,
    "likely": 0,
    "maybe": 1,
    "not_confirmed": 0,
-   "sites": 376
+   "sites": 379
   },
   "894": {
-   "abate_underway": 49,
-   "abate_upcoming": 21,
-   "demo_underway": 29,
-   "demo_upcoming": 30,
+   "abate_underway": 50,
+   "abate_upcoming": 19,
+   "demo_underway": 31,
+   "demo_upcoming": 29,
    "likely": 6,
    "maybe": 2,
    "not_confirmed": 7,
-   "sites": 112
+   "sites": 113
   },
   "935": {
-   "abate_underway": 13,
-   "abate_upcoming": 7,
-   "demo_underway": 58,
-   "demo_upcoming": 15,
+   "abate_underway": 12,
+   "abate_upcoming": 9,
+   "demo_underway": 61,
+   "demo_upcoming": 11,
    "likely": 2,
    "maybe": 2,
    "not_confirmed": 2,
-   "sites": 77
+   "sites": 78
   }
  },
  "no_details": 2,
- "not_confirmed": 93,
+ "not_confirmed": 91,
  "not_confirmed_no_local": 8,
- "notifications": 1004,
- "review": 98,
- "sites": 1528,
- "today": "2026-11-17"
+ "notifications": 1012,
+ "review": 96,
+ "sites": 1538,
+ "today": "2026-11-18"
 }

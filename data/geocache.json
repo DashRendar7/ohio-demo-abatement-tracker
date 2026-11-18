@@ -821,6 +821,13 @@
 "type": "",
 "when": "2026-11-16"
 },
+"11342 Sand Run Rd Whitewater Township OH 45030": {
+"county": "39061",
+"match": "Match",
+"matched": "11342 SAND RUN RD, HARRISON, OH, 45030",
+"type": "Non_Exact",
+"when": "2026-11-18"
+},
 "11355 Jug St Johnstown OH 43031": {
 "county": "39089",
 "match": "Match",
@@ -1141,6 +1148,13 @@
 "matched": "12003 WADE PARK AVE, CLEVELAND, OH, 44106",
 "type": "Non_Exact",
 "when": "2026-11-16"
+},
+"1201 N. Court Street Medina OH 44256": {
+"county": "39103",
+"match": "Match",
+"matched": "1201 N COURT ST, MEDINA, OH, 44256",
+"type": "Exact",
+"when": "2026-11-18"
 },
 "12016 Nelson Parkman Road Ravenna OH 44266": {
 "alt": null,
@@ -2420,6 +2434,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"1600 Gest St Cincinnati OH 45204": {
+"county": "39061",
+"match": "Match",
+"matched": "1600 GEST ST, CINCINNATI, OH, 45204",
+"type": "Exact",
+"when": "2026-11-18"
+},
 "1600 Harvard Ave Cleveland OH 44105": {
 "county": "39035",
 "match": "Match",
@@ -2470,6 +2491,13 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"1617 Highland aVE Portsmouth OH 45662": {
+"county": "39145",
+"match": "Match",
+"matched": "1617 HIGHLAND AVE, PORTSMOUTH, OH, 45662",
+"type": "Exact",
+"when": "2026-11-18"
 },
 "1617 S. Defiance St. Archbold OH 43502": {
 "county": "39051",
@@ -3260,6 +3288,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"201 North First St. Oakwood OH 45873": {
+"county": "39125",
+"match": "Match",
+"matched": "201 S 1ST ST, OAKWOOD, OH, 45873",
+"type": "Non_Exact",
+"when": "2026-11-18"
+},
 "201 West Poplar Street Sidney OH 45365": {
 "county": "39149",
 "match": "Match",
@@ -3930,6 +3965,15 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"2229 Buck Street (aka 2229 Spring Grove) Cincinnati OH 45214": {
+"alt": null,
+"alt_when": "2026-11-18",
+"county": "",
+"match": "No_Match",
+"matched": "",
+"type": "",
+"when": "2026-11-18"
+},
 "2234 Main Avenue SW Warren OH 44481": {
 "alt": {
 "county": "39155",
@@ -4140,6 +4184,20 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"2343 W 38th St. (Rear) Cleveland OH 44113": {
+"county": "39035",
+"match": "Match",
+"matched": "2343 W 38TH ST, CLEVELAND, OH, 44113",
+"type": "Exact",
+"when": "2026-11-18"
+},
+"2343 W 38th St. (front) Cleveland OH 44113": {
+"county": "39035",
+"match": "Match",
+"matched": "2343 W 38TH ST, CLEVELAND, OH, 44113",
+"type": "Non_Exact",
+"when": "2026-11-18"
+},
 "235 Forest Warren OH 44483": {
 "alt": null,
 "alt_when": "2026-11-16",
@@ -4284,6 +4342,13 @@
 "matched": "2426 MIDDLE RD, ASHTABULA, OH, 44004",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"244 Palmer St. Toledo OH 43608": {
+"county": "39095",
+"match": "Match",
+"matched": "244 PALMER ST, TOLEDO, OH, 43608",
+"type": "Exact",
+"when": "2026-11-18"
 },
 "244 South Ardmore Avenue Dayton OH 45417": {
 "county": "39113",
@@ -5828,6 +5893,13 @@
 "type": "",
 "when": "2026-11-16"
 },
+"341 West Central Ave Dayton OH 45449": {
+"county": "39113",
+"match": "Match",
+"matched": "341 W CENTRAL AVE, DAYTON, OH, 45449",
+"type": "Exact",
+"when": "2026-11-18"
+},
 "3411 E 121st St Cleveland OH 44120": {
 "county": "39035",
 "match": "Match",
@@ -6513,6 +6585,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"420 MAPLE SREET NILES OH 44446": {
+"county": "39155",
+"match": "Match",
+"matched": "420 MAPLE ST SE, NILES, OH, 44446",
+"type": "Non_Exact",
+"when": "2026-11-18"
+},
 "420 Monroe St. Port Clinton OH 43452": {
 "county": "39123",
 "match": "Match",
@@ -6782,6 +6861,13 @@
 "matched": "45024 CAMERON RD, WELLSVILLE, OH, 43968",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"4519 Louisville Street Northeast Canton OH 44705": {
+"county": "39151",
+"match": "Match",
+"matched": "4519 LOUISVILLE ST NE, CANTON, OH, 44705",
+"type": "Exact",
+"when": "2026-11-18"
 },
 "452 W. 10th Ave Columbus OH 43210": {
 "county": "39049",
@@ -7083,12 +7169,26 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"4947 Mead Avenue Cleveland OH 44127": {
+"county": "39035",
+"match": "Match",
+"matched": "4947 MEAD AVE, CLEVELAND, OH, 44127",
+"type": "Exact",
+"when": "2026-11-18"
+},
 "4977 Sullivant Ave. Columbus OH 43228": {
 "county": "39049",
 "match": "Match",
 "matched": "4977 SULLIVANT AVE, COLUMBUS, OH, 43228",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"49881 TR 195 Fresno OH 43824": {
+"county": "39031",
+"match": "Match",
+"matched": "49881 TWP RD 195, FRESNO, OH, 43824",
+"type": "Exact",
+"when": "2026-11-18"
 },
 "499 North State Street New Lexington OH 43764": {
 "county": "39127",
@@ -7177,6 +7277,13 @@
 "type": "",
 "when": "2026-11-16"
 },
+"504 S 4th Street Ironton OH 45638": {
+"county": "39087",
+"match": "Match",
+"matched": "504 S 4TH ST, IRONTON, OH, 45638",
+"type": "Exact",
+"when": "2026-11-18"
+},
 "505 Darrow toledo OH 43607": {
 "county": "39095",
 "match": "Match",
@@ -7219,6 +7326,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"508 S. Center St. New Washington OH 44854": {
+"county": "39033",
+"match": "Match",
+"matched": "508 S CENTER ST, NEW WASHINGTON, OH, 44854",
+"type": "Exact",
+"when": "2026-11-18"
+},
 "5095 Foley Road Cincinnati OH 45238": {
 "county": "39061",
 "match": "Match",
@@ -7232,6 +7346,13 @@
 "matched": "51 ROSALIND CT, AKRON, OH, 44304",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"5101 Bridge Ave. Cleveland OH 44102": {
+"county": "39035",
+"match": "Match",
+"matched": "5101 BRIDGE AVE, CLEVELAND, OH, 44102",
+"type": "Exact",
+"when": "2026-11-18"
 },
 "5113 Little Kyger Bidwell OH 45620": {
 "county": "39053",
@@ -7491,6 +7612,13 @@
 "matched": "5349 AVON BELDEN RD, NORTH RIDGEVILLE, OH, 44039",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"535 ROBBINS AVENUE NILES OH 44446": {
+"county": "39155",
+"match": "Match",
+"matched": "535 ROBBINS AVE, NILES, OH, 44446",
+"type": "Exact",
+"when": "2026-11-18"
 },
 "535 S River Rd Franklin OH 45005": {
 "county": "39165",
@@ -8193,6 +8321,13 @@
 "matched": "651 S MAPLE AVE, OXFORD, OH, 45056",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"6525 Hoppensack Avenue Cleveland OH 44127": {
+"county": "39035",
+"match": "Match",
+"matched": "6525 HOPPENSACK AVE, CLEVELAND, OH, 44127",
+"type": "Exact",
+"when": "2026-11-18"
 },
 "6536 Beechmont Ave Cincinnati OH 45230": {
 "county": "39061",
