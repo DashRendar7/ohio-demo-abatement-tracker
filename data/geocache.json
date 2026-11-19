@@ -53,6 +53,15 @@
 "type": "",
 "when": "2026-11-16"
 },
+"0.62 Miles West of SR-71 Columbus OH 43232": {
+"alt": null,
+"alt_when": "2026-11-19",
+"county": "",
+"match": "Tie",
+"matched": "",
+"type": "",
+"when": "2026-11-19"
+},
 "0.92 Mi N Of SR245 Marysville OH 43040": {
 "alt": null,
 "alt_when": "2026-11-16",
@@ -155,6 +164,22 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"1.99 Miles East of SR-270 Columbus OH 43232": {
+"alt": null,
+"alt_when": "2026-11-19",
+"county": "",
+"match": "Tie",
+"matched": "",
+"type": "",
+"when": "2026-11-19"
+},
+"10 EAST VINE ST. MT. VERNON OH 43050": {
+"county": "39083",
+"match": "Match",
+"matched": "10 E VINE ST, MOUNT VERNON, OH, 43050",
+"type": "Exact",
+"when": "2026-11-19"
 },
 "10 Imperial Street New Lexington OH 43764": {
 "alt": null,
@@ -271,6 +296,13 @@
 "matched": "10035 TWP RD 253, LAKEVIEW, OH, 43331",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"1005 12th St. NE Canton OH 44704": {
+"county": "39151",
+"match": "Match",
+"matched": "1005 12TH ST NE, CANTON, OH, 44704",
+"type": "Exact",
+"when": "2026-11-19"
 },
 "1005 N Abbe Road Elyria OH 44035": {
 "county": "39093",
@@ -597,6 +629,13 @@
 "matched": "107 VINDICATOR SQ, YOUNGSTOWN, OH, 44503",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"1074 Moneta Ave Aurora OH 44202": {
+"county": "39133",
+"match": "Match",
+"matched": "1074 MONETA AVE, AURORA, OH, 44202",
+"type": "Exact",
+"when": "2026-11-19"
 },
 "10796 State Route 155 SE Corning OH 43730": {
 "county": "39127",
@@ -1083,6 +1122,13 @@
 "matched": "11815 LORAIN AVE, CLEVELAND, OH, 44111",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"11817 Soika Ave Cleveland OH 44120": {
+"county": "39035",
+"match": "Match",
+"matched": "11817 SOIKA AVE, CLEVELAND, OH, 44120",
+"type": "Exact",
+"when": "2026-11-19"
 },
 "11858 US 62 Winchester OH 45697": {
 "alt": null,
@@ -2227,6 +2273,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"1501 Cleveland Massillon Rd Akron OH 44321": {
+"county": "39153",
+"match": "Match",
+"matched": "1501 S CLEVELAND MASSILLON RD, AKRON, OH, 44321",
+"type": "Non_Exact",
+"when": "2026-11-19"
+},
 "1504 Milan Rd. Sandusky OH 44870": {
 "county": "39043",
 "match": "Match",
@@ -2262,6 +2315,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"1513 Cleveland Massillon RD Akron OH 44321": {
+"county": "39153",
+"match": "Match",
+"matched": "1513 S CLEVELAND MASSILLON RD, AKRON, OH, 44321",
+"type": "Non_Exact",
+"when": "2026-11-19"
+},
 "1515 Lippert Rd. NE Canton OH 44705": {
 "county": "39151",
 "match": "Match",
@@ -2275,6 +2335,13 @@
 "matched": "1518 VINE ST, CINCINNATI, OH, 45202",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"15185 TWP RD. 405 THRONVILLE OH 43076": {
+"county": "39127",
+"match": "Match",
+"matched": "15185 TWP RD 405, THORNVILLE, OH, 43076",
+"type": "Non_Exact",
+"when": "2026-11-19"
 },
 "1520 Pontiac Ave Fremont OH 43420": {
 "county": "39143",
@@ -3637,6 +3704,13 @@
 "type": "",
 "when": "2026-11-16"
 },
+"2101 Charles Street Portsmouth OH 45662": {
+"county": "39145",
+"match": "Match",
+"matched": "2101 CHARLES ST, PORTSMOUTH, OH, 45662",
+"type": "Exact",
+"when": "2026-11-19"
+},
 "21012 Hilliard Blvd Rocky River OH 44116": {
 "county": "39035",
 "match": "Match",
@@ -4207,6 +4281,15 @@
 "type": "",
 "when": "2026-11-16"
 },
+"2350 COLLING RD.SE NEWARK OH 43055": {
+"alt": null,
+"alt_when": "2026-11-19",
+"county": "",
+"match": "No_Match",
+"matched": "",
+"type": "",
+"when": "2026-11-19"
+},
 "2352 state route 45 austinburg OH 44010": {
 "alt": null,
 "alt_when": "2026-11-16",
@@ -4476,6 +4559,20 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"2504 Glenwood Avenue Youngstown OH 44511": {
+"county": "39099",
+"match": "Match",
+"matched": "2504 GLENWOOD AVE, YOUNGSTOWN, OH, 44511",
+"type": "Exact",
+"when": "2026-11-19"
+},
+"251 Hester Ave Alliance OH 44601": {
+"county": "39151",
+"match": "Match",
+"matched": "251 HESTER AVE, ALLIANCE, OH, 44601",
+"type": "Exact",
+"when": "2026-11-19"
+},
 "2511 E. 46th Street Cleveland OH 44104": {
 "county": "39035",
 "match": "Match",
@@ -4669,12 +4766,26 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"27 Henry St. Berea OH 44017": {
+"county": "39035",
+"match": "Match",
+"matched": "27 HENRY ST, BEREA, OH, 44017",
+"type": "Exact",
+"when": "2026-11-19"
+},
 "270 Calhoun Street Cincinnati OH 45219": {
 "county": "39061",
 "match": "Match",
 "matched": "270 CALHOUN ST, CINCINNATI, OH, 45219",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"2700 Brookpark Road cleveland OH 44134": {
+"county": "39035",
+"match": "Match",
+"matched": "2700 BROOKPARK RD, CLEVELAND, OH, 44134",
+"type": "Exact",
+"when": "2026-11-19"
 },
 "2710 Linden Ave. Zanesville OH 43701": {
 "county": "39119",
@@ -5413,12 +5524,26 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"311 Campbell St Portsmouth OH 45662": {
+"county": "39145",
+"match": "Match",
+"matched": "311 CAMPBELL AVE, PORTSMOUTH, OH, 45662",
+"type": "Non_Exact",
+"when": "2026-11-19"
+},
 "312 Carnegie Avenue Cleveland OH 44115": {
 "county": "39035",
 "match": "Match",
 "matched": "312 CARNEGIE AVE, CLEVELAND, OH, 44115",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"313 campbell ave Portsmouth OH 45662": {
+"county": "39145",
+"match": "Match",
+"matched": "313 CAMPBELL AVE, PORTSMOUTH, OH, 45662",
+"type": "Exact",
+"when": "2026-11-19"
 },
 "3150 East Dorothy Lane Kettering OH 45420": {
 "county": "39113",
@@ -6338,6 +6463,13 @@
 "matched": "401 CHARLES ST, MIDDLETOWN, OH, 45042",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"401 Main Street Zanesville OH 43701": {
+"county": "39119",
+"match": "Match",
+"matched": "401 MAIN ST, ZANESVILLE, OH, 43701",
+"type": "Exact",
+"when": "2026-11-19"
 },
 "401 STONES LEVEE Cleveland OH 44113": {
 "county": "39035",
@@ -8000,6 +8132,13 @@
 "matched": "5947 W CENTRAL AVE, TOLEDO, OH, 43615",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"5964 Woodland AVE Portsmouth OH 45662": {
+"county": "39145",
+"match": "Match",
+"matched": "5964 WOODLAND AVE, PORTSMOUTH, OH, 45662",
+"type": "Exact",
+"when": "2026-11-19"
 },
 "5972 Port Clinton Eastern Rd Marblehead OH 43440": {
 "county": "39123",
