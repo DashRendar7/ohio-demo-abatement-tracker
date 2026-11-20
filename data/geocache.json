@@ -416,6 +416,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"1025 Sweitzer Akron OH 44301": {
+"county": "39153",
+"match": "Match",
+"matched": "1025 SWEITZER AVE, AKRON, OH, 44301",
+"type": "Non_Exact",
+"when": "2026-11-20"
+},
 "1025-1035 Sweitzer Ave Akron OH 44301": {
 "county": "39153",
 "match": "Match",
@@ -1509,6 +1516,13 @@
 "matched": "125 CANTON RD NW, CARROLLTON, OH, 44615",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"1251 GREENFIELD AVE SW CANTON OH 44706": {
+"county": "39151",
+"match": "Match",
+"matched": "1251 GREENFIELD AVE SW, CANTON, OH, 44706",
+"type": "Exact",
+"when": "2026-11-20"
 },
 "12511 ERWIN AVE Cleveland OH 44135": {
 "county": "39035",
@@ -4580,12 +4594,26 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"2520 S 3rd Street Ironton OH 45638": {
+"county": "39087",
+"match": "Match",
+"matched": "2520 S 3RD ST, IRONTON, OH, 45638",
+"type": "Exact",
+"when": "2026-11-20"
+},
 "2525 Wayne Madison Road Trenton OH 45067": {
 "county": "39017",
 "match": "Match",
 "matched": "2525 WAYNE MADISON RD, TRENTON, OH, 45067",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"2530 Reading Rd Cincinnati OH 45174": {
+"county": "39061",
+"match": "Match",
+"matched": "2530 READING RD, CINCINNATI, OH, 45206",
+"type": "Non_Exact",
+"when": "2026-11-20"
 },
 "2532 Mink St Johnstown OH 43031": {
 "county": "39089",
@@ -5028,6 +5056,13 @@
 "type": "",
 "when": "2026-11-16"
 },
+"2860 E 130th St Cleveland OH 44120": {
+"county": "39035",
+"match": "Match",
+"matched": "2860 E 130TH ST, CLEVELAND, OH, 44120",
+"type": "Exact",
+"when": "2026-11-20"
+},
 "28727 Wolf Rd Bay Village OH 44140": {
 "county": "39035",
 "match": "Match",
@@ -5404,6 +5439,13 @@
 "matched": "302 W PARK ST, TOLEDO, OH, 43608",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"3024 Derby Road Upper Arlington OH 43221": {
+"county": "39049",
+"match": "Match",
+"matched": "3024 DERBY RD, UPPER ARLINGTON, OH, 43221",
+"type": "Exact",
+"when": "2026-11-20"
 },
 "303 S. Main St. Marysville OH 43040": {
 "county": "39159",
@@ -5806,6 +5848,13 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"3301 Payne Ave Cleveland OH 44114": {
+"county": "39035",
+"match": "Match",
+"matched": "3301 PAYNE AVE, CLEVELAND, OH, 44114",
+"type": "Exact",
+"when": "2026-11-20"
 },
 "3301 Upton Avenue Toledo OH 43613": {
 "county": "39095",
@@ -6229,6 +6278,15 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"369 Tod Avenue NW Warren OH 44485": {
+"alt": null,
+"alt_when": "2026-11-20",
+"county": "",
+"match": "No_Match",
+"matched": "",
+"type": "",
+"when": "2026-11-20"
 },
 "37 North Riverview Street Dublin OH 43017": {
 "county": "39049",
@@ -7558,6 +7616,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"5173 Federal St Warren OH 44483": {
+"county": "39155",
+"match": "Match",
+"matched": "5173 FEDERAL ST NW, WARREN, OH, 44483",
+"type": "Non_Exact",
+"when": "2026-11-20"
+},
 "519 Labelle Street Brilliant OH 43913": {
 "county": "39081",
 "match": "Match",
@@ -7811,6 +7876,13 @@
 "matched": "544 BRACEVILLE ROBINSON RD NW, NEWTON FALLS, OH, 44444",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"544 Stewart Avenue Cincinnati OH 45229": {
+"county": "39061",
+"match": "Match",
+"matched": "544 STEWART PL, CINCINNATI, OH, 45229",
+"type": "Non_Exact",
+"when": "2026-11-20"
 },
 "545 PITTSBURGH AVENUE WOOSTER OH 44691": {
 "county": "39169",
@@ -8358,6 +8430,13 @@
 "matched": "6337 N RIDGE RD, MADISON, OH, 44057",
 "type": "Non_Exact",
 "when": "2026-11-16"
+},
+"634 Buffalo St Conneaut OH 44030": {
+"county": "39007",
+"match": "Match",
+"matched": "634 BUFFALO ST, CONNEAUT, OH, 44030",
+"type": "Exact",
+"when": "2026-11-20"
 },
 "636 Avondale St. East Liverpool OH 43920": {
 "county": "39029",
@@ -9400,6 +9479,13 @@
 "matched": "88 W 18TH AVE, COLUMBUS, OH, 43210",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"880 Maple Avenue Conneaut OH 44030": {
+"county": "39007",
+"match": "Match",
+"matched": "880 MAPLE AVE, CONNEAUT, OH, 44030",
+"type": "Exact",
+"when": "2026-11-20"
 },
 "8801 Colerain Ave Cincinnati OH 45251": {
 "county": "39061",
