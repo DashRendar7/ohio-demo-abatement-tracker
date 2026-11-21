@@ -774,6 +774,13 @@
 "type": "",
 "when": "2026-11-16"
 },
+"1118 Troy Hill Road Urbana OH 43078": {
+"county": "39021",
+"match": "Match",
+"matched": "1118 TROY HILL RD, URBANA, OH, 43078",
+"type": "Exact",
+"when": "2026-11-21"
+},
 "11186 Reading Road Cincinnati OH 45241": {
 "county": "39061",
 "match": "Match",
@@ -1021,6 +1028,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"116 Arlington Ave SW Canton OH 44706": {
+"county": "39151",
+"match": "Match",
+"matched": "116 ARLINGTON AVE SW, CANTON, OH, 44706",
+"type": "Exact",
+"when": "2026-11-21"
+},
 "1164-1188 Hill Road N Pickerington OH 43147": {
 "alt": null,
 "alt_when": "2026-11-16",
@@ -1029,6 +1043,13 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"11641 Mosteller Road Cincinnati OH 45241": {
+"county": "39061",
+"match": "Match",
+"matched": "11641 MOSTELLER RD, CINCINNATI, OH, 45241",
+"type": "Exact",
+"when": "2026-11-21"
 },
 "11661 State RT 44 (OH-44) Mantua OH 44255": {
 "county": "39133",
@@ -1699,6 +1720,13 @@
 "matched": "130 S KILMER ST, DAYTON, OH, 45417",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"130-134 William Howard Taft Rd. Cincinnati OH 45219": {
+"county": "39061",
+"match": "Match",
+"matched": "134 WILLIAM HOWARD TAFT RD, CINCINNATI, OH, 45219",
+"type": "Non_Exact",
+"when": "2026-11-21"
 },
 "1301 East 9th Street Cleveland OH 44114": {
 "county": "39035",
@@ -2747,6 +2775,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"1729 Drake Rd Lebanon OH 45036": {
+"county": "39165",
+"match": "Match",
+"matched": "1729 DRAKE RD, LEBANON, OH, 45036",
+"type": "Exact",
+"when": "2026-11-21"
+},
 "173 West Lorain Street Oberlin OH 44074": {
 "county": "39093",
 "match": "Match",
@@ -3760,6 +3795,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"212 West Ward Street Urbana OH 43078": {
+"county": "39021",
+"match": "Match",
+"matched": "212 W WARD ST, URBANA, OH, 43078",
+"type": "Exact",
+"when": "2026-11-21"
+},
 "2121 Euclid Ave Cleveland OH 44115": {
 "county": "39035",
 "match": "Match",
@@ -4538,6 +4580,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"2481 W State street Alliance OH 46601": {
+"county": "39151",
+"match": "Match",
+"matched": "2481 W STATE ST, ALLIANCE, OH, 44601",
+"type": "Non_Exact",
+"when": "2026-11-21"
+},
 "249 S Harbine Dayton OH 45403": {
 "county": "39113",
 "match": "Match",
@@ -4914,6 +4963,13 @@
 "matched": "2789 E 122ND ST, CLEVELAND, OH, 44120",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"279 Fueston Road St Paris OH 43072": {
+"county": "39021",
+"match": "Match",
+"matched": "279 FUESTON RD, SAINT PARIS, OH, 43072",
+"type": "Exact",
+"when": "2026-11-21"
 },
 "2790 Columbus Rd Granville OH 43023": {
 "county": "39089",
@@ -7280,6 +7336,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"48 Hollywood Dr Little Hocking OH 45714": {
+"county": "39167",
+"match": "Match",
+"matched": "48 HOLLYWOOD DR, LITTLE HOCKING, OH, 45742",
+"type": "Non_Exact",
+"when": "2026-11-21"
+},
 "48 hollywood dr Little Hocking OH 45742": {
 "county": "39167",
 "match": "Match",
@@ -7622,6 +7685,13 @@
 "matched": "5173 FEDERAL ST NW, WARREN, OH, 44483",
 "type": "Non_Exact",
 "when": "2026-11-20"
+},
+"518 Butler St Marietta OH 45750": {
+"county": "39167",
+"match": "Match",
+"matched": "518 BUTLER ST, MARIETTA, OH, 45750",
+"type": "Exact",
+"when": "2026-11-21"
 },
 "519 Labelle Street Brilliant OH 43913": {
 "county": "39081",
@@ -8012,6 +8082,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"5635 State Route 219 Celina OH 45822": {
+"county": "39107",
+"match": "Match",
+"matched": "5635 STATE RTE 219, CELINA, OH, 45822",
+"type": "Exact",
+"when": "2026-11-21"
+},
 "567 clay street jefferson OH 44047": {
 "county": "39007",
 "match": "Match",
@@ -8367,6 +8444,13 @@
 "matched": "62 N RIVERVIEW ST, DUBLIN, OH, 43017",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"6200 Enterprise Parkway Solon OH 44139": {
+"county": "39035",
+"match": "Match",
+"matched": "6200 ENTERPRISE PKWY, SOLON, OH, 44139",
+"type": "Exact",
+"when": "2026-11-21"
 },
 "6201 Dibble Ave Cleveland OH 44103": {
 "county": "39035",
@@ -8918,6 +9002,13 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"7288 Old grade road Chesterhill OH 43728": {
+"county": "39115",
+"match": "Match",
+"matched": "7288 OLD GRADE RD, CHESTERHILL, OH, 43728",
+"type": "Exact",
+"when": "2026-11-21"
 },
 "7301 Bessemer Avenue Cleveland OH 44127": {
 "county": "39035",
