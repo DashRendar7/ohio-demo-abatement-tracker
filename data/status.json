@@ -1,15 +1,15 @@
 {
  "basis": {
-  "Census address match": 1311,
+  "Census address match": 1310,
   "County not confirmed": 16,
   "Likely county": 75,
   "ODOT county code": 14,
   "ZIP in one county": 119
  },
- "built": "2026-11-22T01:36:28+00:00",
- "confirmed": 1444,
+ "built": "2026-11-22T07:38:08+00:00",
+ "confirmed": 1443,
  "epa_as_of": "11/20/2026 9:00:10 PM",
- "epa_posted": "Sun, 22 Nov 2026 01:08:24 GMT",
+ "epa_posted": "Sun, 22 Nov 2026 07:08:16 GMT",
  "epa_rows": 73326,
  "epa_sha256": "db8c6b5bdcadd9fe63ead6d4403ec4b3d9fda353a3f8f6d148344d392786854e",
  "likely": 75,
@@ -225,14 +225,14 @@
    "sites": 120
   },
   "245": {
-   "abate_underway": 7,
+   "abate_underway": 6,
    "abate_upcoming": 3,
-   "demo_underway": 10,
+   "demo_underway": 9,
    "demo_upcoming": 4,
    "likely": 0,
    "maybe": 0,
    "not_confirmed": 0,
-   "sites": 15
+   "sites": 14
   },
   "265": {
    "abate_underway": 35,
@@ -245,7 +245,7 @@
    "sites": 116
   },
   "310": {
-   "abate_underway": 208,
+   "abate_underway": 195,
    "abate_upcoming": 24,
    "demo_underway": 153,
    "demo_upcoming": 43,
@@ -267,8 +267,8 @@
   "423": {
    "abate_underway": 64,
    "abate_upcoming": 5,
-   "demo_underway": 120,
-   "demo_upcoming": 17,
+   "demo_underway": 121,
+   "demo_upcoming": 16,
    "likely": 15,
    "maybe": 4,
    "not_confirmed": 18,
@@ -365,7 +365,7 @@
    "sites": 61
   },
   "860": {
-   "abate_underway": 208,
+   "abate_underway": 195,
    "abate_upcoming": 24,
    "demo_underway": 153,
    "demo_upcoming": 43,
@@ -398,8 +398,8 @@
  "no_details": 2,
  "not_confirmed": 91,
  "not_confirmed_no_local": 8,
- "notifications": 1007,
+ "notifications": 1006,
  "review": 96,
- "sites": 1535,
- "today": "2026-11-21"
+ "sites": 1534,
+ "today": "2026-11-22"
 }
