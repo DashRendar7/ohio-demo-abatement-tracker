@@ -267,6 +267,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"10009 Denison Ave. Cleveland OH 44102": {
+"county": "39035",
+"match": "Match",
+"matched": "10009 DENISON AVE, CLEVELAND, OH, 44102",
+"type": "Exact",
+"when": "2026-11-24"
+},
 "1001 Canton Road NW Carrollton OH 44615": {
 "county": "39019",
 "match": "Match",
@@ -743,6 +750,13 @@
 "matched": "11100 EUCLID AVE, CLEVELAND, OH, 44106",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"11102 lake point Glouster OH 45732": {
+"county": "39115",
+"match": "Match",
+"matched": "11102 LAKEPOINT DR, GLOUSTER, OH, 45732",
+"type": "Non_Exact",
+"when": "2026-11-24"
 },
 "1111 Klondike toledo OH 43607": {
 "county": "39095",
@@ -2872,6 +2886,13 @@
 "type": "",
 "when": "2026-11-16"
 },
+"17601 Brookpark Rd Cleveland OH 44142": {
+"county": "39035",
+"match": "Match",
+"matched": "17601 BROOKPARK RD, CLEVELAND, OH, 44142",
+"type": "Exact",
+"when": "2026-11-24"
+},
 "1767 Coon Hill Road Winchester OH 45697": {
 "county": "39001",
 "match": "Match",
@@ -4286,6 +4307,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"232 E. Eighth Street Chillicothe OH 45601": {
+"county": "39141",
+"match": "Match",
+"matched": "232 E 8TH ST, CHILLICOTHE, OH, 45601",
+"type": "Exact",
+"when": "2026-11-24"
+},
 "2320 Weaver St Dayton OH 45417": {
 "county": "39113",
 "match": "Match",
@@ -5358,6 +5386,20 @@
 "matched": "30 W WALNUT ST, JEFFERSON, OH, 44047",
 "type": "Non_Exact",
 "when": "2026-11-16"
+},
+"30-33 E. Frambes Ave. Columbus OH 43201": {
+"county": "39049",
+"match": "Match",
+"matched": "33 E FRAMBES AVE, COLUMBUS, OH, 43201",
+"type": "Non_Exact",
+"when": "2026-11-24"
+},
+"30-36 E. Woodruff Ave. Columbus OH 43201": {
+"county": "39049",
+"match": "Match",
+"matched": "36 E WOODRUFF AVE, COLUMBUS, OH, 43201",
+"type": "Non_Exact",
+"when": "2026-11-24"
 },
 "300 E 185th St. Cleveland OH 44119": {
 "county": "39035",
@@ -7217,6 +7259,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"4619 main ave ashtabula OH 44004": {
+"county": "39007",
+"match": "Match",
+"matched": "4619 MAIN AVE, ASHTABULA, OH, 44004",
+"type": "Exact",
+"when": "2026-11-24"
+},
 "4631 E. Kemper Road Cincinnati OH 45241": {
 "county": "39061",
 "match": "Match",
@@ -7336,6 +7385,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"4779 US 68 West Liberty OH 43357": {
+"county": "39091",
+"match": "Match",
+"matched": "4779 US HWY 68, WEST LIBERTY, OH, 43357",
+"type": "Exact",
+"when": "2026-11-24"
+},
 "48 Hollywood Dr Little Hocking OH 45714": {
 "county": "39167",
 "match": "Match",
@@ -7372,6 +7428,13 @@
 "matched": "484 W 12TH AVE, COLUMBUS, OH, 43210",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"4850 Everhard Road NW Canton OH 44718": {
+"county": "39151",
+"match": "Match",
+"matched": "4850 EVERHARD RD NW, CANTON, OH, 44718",
+"type": "Exact",
+"when": "2026-11-24"
 },
 "4853 Meadowbrook Dr. NW Leavittsburg OH 44430": {
 "county": "39155",
@@ -7514,12 +7577,26 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"5002 S Walnut St South Bloomfield OH 43103": {
+"county": "39129",
+"match": "Match",
+"matched": "5002 WALNUT ST S, SOUTH BLOOMFIELD, OH, 43103",
+"type": "Non_Exact",
+"when": "2026-11-24"
+},
 "5010 N High St Columbus OH 43214": {
 "county": "39049",
 "match": "Match",
 "matched": "5010 N HIGH ST, COLUMBUS, OH, 43214",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"5012 S Walnut St South Bloomfield OH 43103": {
+"county": "39129",
+"match": "Match",
+"matched": "5012 WALNUT ST S, SOUTH BLOOMFIELD, OH, 43103",
+"type": "Non_Exact",
+"when": "2026-11-24"
 },
 "5022 Old Windham Ridge Rd. Newton Falls OH 44444": {
 "alt": null,
@@ -7613,6 +7690,13 @@
 "matched": "5113 LITTLE KYGER RD, CHESHIRE, OH, 45620",
 "type": "Non_Exact",
 "when": "2026-11-16"
+},
+"5115 14th Street Southwest Canton OH 44710": {
+"county": "39151",
+"match": "Match",
+"matched": "5115 14TH ST SW, CANTON, OH, 44710",
+"type": "Exact",
+"when": "2026-11-24"
 },
 "5115 Fisher Road Columbus OH 43228": {
 "county": "39049",
@@ -8417,6 +8501,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"618 Broadway Ave. Bedford OH 44146": {
+"county": "39035",
+"match": "Match",
+"matched": "618 BROADWAY AVE, BEDFORD, OH, 44146",
+"type": "Exact",
+"when": "2026-11-24"
+},
 "6180 Center Hill Road Cincinnati OH 45224": {
 "county": "39061",
 "match": "Match",
@@ -8486,6 +8577,13 @@
 "matched": "627 RICHLAND MALL, MANSFIELD, OH, 44906",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"6275 Blacklick Easyern Road pickerington OH 43147": {
+"county": "39045",
+"match": "Match",
+"matched": "6275 BLACKLICK EASTERN RD NW, PICKERINGTON, OH, 43147",
+"type": "Non_Exact",
+"when": "2026-11-24"
 },
 "6285 & 6287 Tri Ridge Blvd Loveland OH 45140": {
 "county": "39025",
@@ -8565,6 +8663,13 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"6478 State Road Unit G9 Parma OH 44134": {
+"county": "39035",
+"match": "Match",
+"matched": "6478 STATE RD, PARMA, OH, 44134",
+"type": "Exact",
+"when": "2026-11-24"
 },
 "650 South Patterson Ave Oxford OH 45056": {
 "county": "39017",
