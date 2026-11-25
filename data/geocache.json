@@ -288,6 +288,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"1001 Shiloh Springs Rd. Dayton OH 45415": {
+"county": "39113",
+"match": "Match",
+"matched": "1001 SHILOH SPRINGS RD, DAYTON, OH, 45415",
+"type": "Exact",
+"when": "2026-11-25"
+},
 "1002 Gilbert Ave Cincinnati OH 45202": {
 "alt": null,
 "alt_when": "2026-11-16",
@@ -352,6 +359,20 @@
 "matched": "101 FAIRVIEW WAY, MINGO JUNCTION, OH, 43938",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"10119 Walnut Creek Pike Ashville OH 43103": {
+"county": "39129",
+"match": "Match",
+"matched": "10119 WALNUT CREEK PIKE, ASHVILLE, OH, 43103",
+"type": "Exact",
+"when": "2026-11-25"
+},
+"1013 W Hopocan Ave Barberton OH 44203": {
+"county": "39153",
+"match": "Match",
+"matched": "1013 W HOPOCAN AVE, BARBERTON, OH, 44203",
+"type": "Exact",
+"when": "2026-11-25"
 },
 "10150 Montgomery Rd Cincinnati OH 45242": {
 "county": "39061",
@@ -686,6 +707,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"10917 Magnolia Drive Cleveland OH 44106": {
+"county": "39035",
+"match": "Match",
+"matched": "10917 MAGNOLIA DR, CLEVELAND, OH, 44106",
+"type": "Exact",
+"when": "2026-11-25"
+},
 "1097 Bellows Akron OH 44301": {
 "county": "39153",
 "match": "Match",
@@ -736,6 +764,13 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"11000 Cedar Avenue Cleveland OH 44106": {
+"county": "39035",
+"match": "Match",
+"matched": "11000 CEDAR AVE, CLEVELAND, OH, 44106",
+"type": "Exact",
+"when": "2026-11-25"
 },
 "11100 Euclid Ave. Cleveland OH 44106": {
 "county": "39035",
@@ -2357,6 +2392,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"1509 Lippert Rd NE Canton OH 44705": {
+"county": "39151",
+"match": "Match",
+"matched": "1509 LIPPERT RD NE, CANTON, OH, 44705",
+"type": "Exact",
+"when": "2026-11-25"
+},
 "151 Martin Drive Shelby OH 44875": {
 "county": "39139",
 "match": "Match",
@@ -2377,6 +2419,13 @@
 "matched": "1513 S CLEVELAND MASSILLON RD, AKRON, OH, 44321",
 "type": "Non_Exact",
 "when": "2026-11-19"
+},
+"1515 Lippert RD NE Canton OH 44705": {
+"county": "39151",
+"match": "Match",
+"matched": "1515 LIPPERT RD NE, CANTON, OH, 44705",
+"type": "Exact",
+"when": "2026-11-25"
 },
 "1515 Lippert Rd. NE Canton OH 44705": {
 "county": "39151",
@@ -2584,6 +2633,13 @@
 "matched": "1601 MIAMI ST, TOLEDO, OH, 43605",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"1603 Irwin pl NE Canton OH 44705": {
+"county": "39151",
+"match": "Match",
+"matched": "1603 IRWIN PL NE, CANTON, OH, 44705",
+"type": "Exact",
+"when": "2026-11-25"
 },
 "161 Taylor Ave Columbus OH 43203": {
 "county": "39049",
@@ -3530,6 +3586,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"2031 Auburn Ave cincinnati OH 45219": {
+"county": "39061",
+"match": "Match",
+"matched": "2031 AUBURN AVE, CINCINNATI, OH, 45219",
+"type": "Exact",
+"when": "2026-11-25"
+},
 "20340 Center Ridge Rd Rocky River OH 44116": {
 "county": "39035",
 "match": "Match",
@@ -3615,6 +3678,13 @@
 "matched": "2050 LEE BLVD, EAST CLEVELAND, OH, 44112",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"2051 W 18th St Cleveland OH 44113": {
+"county": "39035",
+"match": "Match",
+"matched": "2051 W 18TH ST, CLEVELAND, OH, 44113",
+"type": "Exact",
+"when": "2026-11-25"
 },
 "206 Logan Warren OH 44483": {
 "county": "39155",
@@ -4767,6 +4837,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"262 Wilmer Ave Cincinnati OH 45226": {
+"county": "39061",
+"match": "Match",
+"matched": "262 WILMER AVE, CINCINNATI, OH, 45226",
+"type": "Exact",
+"when": "2026-11-25"
+},
 "2630 Linden Ave. Zanesville OH 43701": {
 "county": "39119",
 "match": "Match",
@@ -4842,6 +4919,13 @@
 "matched": "2665 STATE RTE 137, WINCHESTER, OH, 45697",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"2680 Stoney Ridge Rd Avon OH 44011": {
+"county": "39093",
+"match": "Match",
+"matched": "2680 STONEY RIDGE RD, AVON, OH, 44011",
+"type": "Exact",
+"when": "2026-11-25"
 },
 "2682 Mink St. Johnstown OH 43031": {
 "county": "39089",
@@ -5699,6 +5783,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"316 W. Lane Ave. Columbus OH 43201": {
+"county": "39049",
+"match": "Match",
+"matched": "316 W LANE AVE, COLUMBUS, OH, 43201",
+"type": "Exact",
+"when": "2026-11-25"
+},
 "317 East second street Manchester OH 45144": {
 "county": "39001",
 "match": "Match",
@@ -6277,6 +6368,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"3549 W 46 ST Cleveland OH 44102": {
+"county": "39035",
+"match": "Match",
+"matched": "3549 W 46TH ST, CLEVELAND, OH, 44102",
+"type": "Exact",
+"when": "2026-11-25"
+},
 "3552 East 144th Street Cleveland OH 44128": {
 "county": "39035",
 "match": "Match",
@@ -6464,6 +6562,20 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"380 S Sycamore St St. Henry OH 45883": {
+"county": "39107",
+"match": "Match",
+"matched": "380 S SYCAMORE ST, SAINT HENRY, OH, 45883",
+"type": "Exact",
+"when": "2026-11-25"
+},
+"380 S Sycamore Street St. Henry OH 45883": {
+"county": "39107",
+"match": "Match",
+"matched": "380 S SYCAMORE ST, SAINT HENRY, OH, 45883",
+"type": "Exact",
+"when": "2026-11-25"
 },
 "3800 Bridge Ave Cleveland OH 44109": {
 "county": "39035",
@@ -8117,6 +8229,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"55668 Twp Rd 154 West Lafayette OH 43845": {
+"county": "39031",
+"match": "Match",
+"matched": "55668 TWP HWY 154, WEST LAFAYETTE, OH, 43845",
+"type": "Exact",
+"when": "2026-11-25"
+},
 "557 clay street jefferson OH 44047": {
 "county": "39007",
 "match": "Match",
@@ -8165,6 +8284,15 @@
 "matched": "563 N WOOSTER RD, BARBERTON, OH, 44203",
 "type": "Non_Exact",
 "when": "2026-11-16"
+},
+"5635 St Rte 219 Coldwater OH 45828": {
+"alt": null,
+"alt_when": "2026-11-25",
+"county": "",
+"match": "No_Match",
+"matched": "",
+"type": "",
+"when": "2026-11-25"
 },
 "5635 State Route 219 Celina OH 45822": {
 "county": "39107",
@@ -9115,6 +9243,13 @@
 "type": "Exact",
 "when": "2026-11-21"
 },
+"7298 Lake Road Madison Township OH 44057": {
+"county": "39085",
+"match": "Match",
+"matched": "7298 LAKE RD, MADISON, OH, 44057",
+"type": "Non_Exact",
+"when": "2026-11-25"
+},
 "7301 Bessemer Avenue Cleveland OH 44127": {
 "county": "39035",
 "match": "Match",
@@ -9431,6 +9566,13 @@
 "matched": "8217 DORVER AVE, CLEVELAND, OH, 44105",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"822 Locust St Coshocton OH 43812": {
+"county": "39031",
+"match": "Match",
+"matched": "822 LOCUST ST, COSHOCTON, OH, 43812",
+"type": "Exact",
+"when": "2026-11-25"
 },
 "823 William Howard Taft Cincinnati OH 45206": {
 "county": "39061",
@@ -10059,6 +10201,13 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"99 Kent St Akron OH 44308": {
+"county": "39153",
+"match": "Match",
+"matched": "99 KENT ST, AKRON, OH, 44305",
+"type": "Non_Exact",
+"when": "2026-11-25"
 },
 "9905 Parkview Ave Cleveland OH 44104": {
 "county": "39035",
