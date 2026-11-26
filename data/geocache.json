@@ -2035,6 +2035,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"1400 East 222nd St. Euclid OH 44117": {
+"county": "39035",
+"match": "Match",
+"matched": "1400 E 222ND ST, EUCLID, OH, 44117",
+"type": "Exact",
+"when": "2026-11-26"
+},
 "1400 Lowell St. Elyria OH 44035": {
 "county": "39093",
 "match": "Match",
@@ -2224,6 +2231,13 @@
 "matched": "14512 OHIO AVE, CLEVELAND, OH, 44128",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"1455 N. Ontario St. Toledo OH 43604": {
+"county": "39095",
+"match": "Match",
+"matched": "1455 N ONTARIO ST, TOLEDO, OH, 43604",
+"type": "Exact",
+"when": "2026-11-26"
 },
 "146 E. Washington Street Chagrin Falls OH 44022": {
 "county": "39035",
@@ -2758,6 +2772,13 @@
 "matched": "1650 PARKMAN RD NW, WARREN, OH, 44485",
 "type": "Non_Exact",
 "when": "2026-11-16"
+},
+"1652 25th St NW Canton OH 44709": {
+"county": "39151",
+"match": "Match",
+"matched": "1652 25TH ST NW, CANTON, OH, 44709",
+"type": "Exact",
+"when": "2026-11-26"
 },
 "1655 South Main Street Akron OH 44301": {
 "county": "39153",
@@ -4228,12 +4249,26 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"225 Wilmer Avenue Cincinnati OH 45226": {
+"county": "39061",
+"match": "Match",
+"matched": "225 WILMER AVE, CINCINNATI, OH, 45226",
+"type": "Exact",
+"when": "2026-11-26"
+},
 "226 S Jackson Youngstown OH 44504": {
 "county": "39099",
 "match": "Match",
 "matched": "226 S JACKSON ST, YOUNGSTOWN, OH, 44506",
 "type": "Non_Exact",
 "when": "2026-11-16"
+},
+"2268 Schoedinger Avenue Cincinnati OH 45214": {
+"county": "39061",
+"match": "Match",
+"matched": "2268 SCHOEDINGER AVE, CINCINNATI, OH, 45214",
+"type": "Exact",
+"when": "2026-11-26"
 },
 "227 3rd street Canton OH 44702": {
 "alt": null,
@@ -6210,6 +6245,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"335-337 Belmont St. NW Warren OH 44483": {
+"county": "39155",
+"match": "Match",
+"matched": "337 BELMONT ST NW, WARREN, OH, 44483",
+"type": "Non_Exact",
+"when": "2026-11-26"
+},
 "3360 Swishers Mill Rd. Lewisburg OH 45338": {
 "county": "39135",
 "match": "Match",
@@ -6604,6 +6646,13 @@
 "matched": "3828 E 55TH ST, CLEVELAND, OH, 44105",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"3846 Vance Rd. Moraine OH 45439": {
+"county": "39113",
+"match": "Match",
+"matched": "3846 VANCE RD, MORAINE, OH, 45439",
+"type": "Exact",
+"when": "2026-11-26"
 },
 "385 North Warren OH 44483": {
 "alt": null,
@@ -7040,6 +7089,13 @@
 "matched": "424 HAZLETT AVE NW, CANTON, OH, 44708",
 "type": "Exact",
 "when": "2026-11-16"
+},
+"425 Forest Ave Cincinnati OH 45229": {
+"county": "39061",
+"match": "Match",
+"matched": "425 FOREST AVE, CINCINNATI, OH, 45229",
+"type": "Exact",
+"when": "2026-11-26"
 },
 "425 South Pine St. Lima OH 45804": {
 "county": "39003",
@@ -8734,6 +8790,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"6303 Harrison Avenue Cincinnati OH 45247": {
+"county": "39061",
+"match": "Match",
+"matched": "6303 HARRISON AVE, CINCINNATI, OH, 45247",
+"type": "Exact",
+"when": "2026-11-26"
+},
 "6337 north ridge madison OH 44057": {
 "county": "39085",
 "match": "Match",
@@ -9399,6 +9462,13 @@
 "type": "Exact",
 "when": "2026-11-16"
 },
+"7791 MONTGOMERY RD CINCINNATI OH 45236": {
+"county": "39061",
+"match": "Match",
+"matched": "7791 MONTGOMERY RD, CINCINNATI, OH, 45236",
+"type": "Exact",
+"when": "2026-11-26"
+},
 "7800 Walton Parkway New Albany OH 43054": {
 "county": "39049",
 "match": "Match",
@@ -9980,6 +10050,13 @@
 "matched": "",
 "type": "",
 "when": "2026-11-16"
+},
+"927 5th St NW Canton OH 44709": {
+"county": "39151",
+"match": "Match",
+"matched": "927 5TH ST NW, CANTON, OH, 44703",
+"type": "Non_Exact",
+"when": "2026-11-26"
 },
 "9280 Bruce Dr Franklin OH 45005": {
 "county": "39165",
