@@ -9574,6 +9574,13 @@
 "type": "Non_Exact",
 "when": "2026-11-16"
 },
+"810 Main St, Martins Ferry OH 43935": {
+"county": "39013",
+"match": "Match",
+"matched": "810 MAIN ST, MARTINS FERRY, OH, 43935",
+"type": "Exact",
+"when": "2026-11-28"
+},
 "811 Madison Ave. Toledo OH 43604": {
 "county": "39095",
 "match": "Match",
